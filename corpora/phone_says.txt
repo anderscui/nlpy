@@ -1,0 +1,14 @@
+ON JANUARY 6th hordes will converge on a vast conference centre in Las Vegas for the start of the International Consumer Electronics Show. At the annual shindig, tech firms will show off their latest and greatest gizmos, from smart cars to smartphones and fancy TVs. The gadgets will provoke plenty of emotions among the 160,000 or so visitors. But the devices themselves won’t be able to tell what those people are feeling.
+
+Beyond Verbal would like to change that. The Israeli startup is one of several firms working in the field of “emotions analytics”. Its software is designed to deduce someone’s emotional state from a brief sample of his voice captured by microphone. Rather than focusing on the words used, the software analyses such things as the loudness and pitch of the speech, and then runs the results through an algorithm to match them with patterns from its database.
+In this section
+
+Beyond Verbal has gathered hundreds of thousands of voice samples in more than 40 languages and has developed a smartphone app, Moodies, that lets people try its technology. But for now, it and other companies in the field, such as Nemesysco, have focused their commercial efforts on narrow areas such as market research and security rather than mass-market consumer electronics.
+
+Yuval Mor, Beyond Verbal’s chief executive, thinks that emotional-analytics software could be useful in things such as phones, fitness gadgets and cars. For instance, a vehicle that senses a driver is in a heightened emotional state, perhaps because he has been drinking, could flash up a warning before he takes to the road.
+
+There are a couple of snags with all this. Some experts in the voice-recognition field are sceptical that the technology touted is reliable enough for mass deployment. Then there is the thorny issue of privacy. People are bound to be repelled by the prospect of companies and devices tracking their emotions.
+
+Mr Mor acknowledges such concerns, but argues that “the upside of the technology can more than compensate for the downside.” Yet there are already signs of resistance to emotion-tracking software. The Samaritans, a British suicide-prevention group, recently disabled a free web app it had promoted that alerted people whenever someone they were following on Twitter used a phrase such as “hate myself”, which suggested the writer was in a fragile emotional state. Critics had argued that the app could also be used by crooks and others to prey on vulnerable people.
+
+In the wrong hands, the technology being developed by Beyond Verbal and its rivals could also be exploited for nefarious ends. Privacy activists and lawyers should keep a close eye on it.
