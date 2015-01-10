@@ -1,0 +1,11 @@
+import codecs
+
+
+def read_all(file_name):
+    with codecs.open(file_name, encoding='utf-8') as f:
+        return f.read()
+
+
+def read_lines(file_name):
+    with codecs.open(file_name, encoding='utf-8') as f:
+        return f.readlines()

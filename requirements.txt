@@ -1,0 +1,9 @@
+BeautifulSoup
+pip install beautifulsoup4
+
+lxml
+pip install lxml
+
+nose test
+pip install nose
+
