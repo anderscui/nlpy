@@ -118,6 +118,7 @@ def sent_scores(data):
 
             for word in segtmp:
                 if word in pos_words:  # 判断词语是否是情感词
+                    print(word)
                     poscount += 1
                     c = 0
                     for w in segtmp[a:i]:  # 扫描情感词前的程度词
@@ -136,6 +137,7 @@ def sent_scores(data):
                         poscount = 0
                     a = i + 1  # 情感词的位置变化
                 elif word in neg_words:  # 消极情感的分析，与上面一致
+                    print('-' + word)
                     negcount += 1
                     d = 0
                     for w in segtmp[a:i]:
@@ -202,12 +204,12 @@ if __name__ == '__main__':
     assert len(rating) == len(comments)
     print(len(rating))
 
-    cnt = 15
+    cnt = 5
 
-    seg_comments = [jieba.cut(c, cut_all=False) for c in comments[:cnt]]
-    for i, sc in enumerate(seg_comments):
-        print(comments[i])
-        print "/ ".join(sc)
+    # seg_comments = [jieba.cut(c, cut_all=False) for c in comments[:cnt]]
+    # for i, sc in enumerate(seg_comments):
+    #     print(comments[i])
+    #     print "/ ".join(sc)
 
 
     # pos_words = load_pos_words()
@@ -220,14 +222,14 @@ if __name__ == '__main__':
     # for w in pos_words[:10]:
     #     print(w)
 
-    # sents_cmts = [cut_sentence(c) for c in comments[:cnt]]
-    # # for sents in sents_cmts:
-    # #     for s in sents:
-    # #         print(s)
-    # scores = sent_scores(sents_cmts)
-    # # print(scores)
-    #
-    # for i, sents in enumerate(sents_cmts):
+    sents_cmts = [cut_sentence(c) for c in comments[:cnt]]
+    # for sents in sents_cmts:
     #     for s in sents:
     #         print(s)
-    #     print(scores[i])
+    scores = sent_scores(sents_cmts)
+    # print(scores)
+    #
+    for i, sents in enumerate(sents_cmts):
+        for s in sents:
+            print(s)
+        print(scores[i])
