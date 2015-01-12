@@ -24,4 +24,4 @@ seg_list3 = jieba.cut(sent3)
 print "/ ".join(seg_list3)
 
 
-## 
+## tagging

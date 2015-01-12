@@ -6,6 +6,6 @@ def read_all(file_name):
         return f.read()
 
 
-def read_lines(file_name):
-    with codecs.open(file_name, encoding='utf-8') as f:
+def read_lines(file_name, encoding='utf-8'):
+    with codecs.open(file_name, encoding=encoding) as f:
         return f.readlines()
