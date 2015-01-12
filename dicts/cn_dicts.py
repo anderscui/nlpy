@@ -37,7 +37,7 @@ def save_neg_sentiment_dict():
     dict_file = './data/neg_sent_zh.txt'
     lines = chinese.read_lines(dict_file)
     dict_data = [w.strip() for w in lines if w.strip()]
-    to_pickle(dict_data, './data/neg_sent_zh.pkl')
+    to_pickle(dict_data, '../douban/movies/dicts/neg_sent_zh.pkl')
 
 
 def save_degree_dict():
@@ -82,10 +82,10 @@ if __name__ == '__main__':
     # for w in pos_sent[:10]:
     #     print(w)
 
-    # save_neg_sentiment_dict()
+    save_neg_sentiment_dict()
     # save_degree_dict()
 
-    save_inverse_dict()
+    # save_inverse_dict()
 
     # file_path
-    # print(__file__)
+    print(__file__)

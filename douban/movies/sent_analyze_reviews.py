@@ -118,13 +118,15 @@ def sent_scores(data):
 
             for word in segtmp:
                 if word in pos_words:  # 判断词语是否是情感词
-                    print(word)
+                    print('+' + word)
                     poscount += 1
                     c = 0
                     for w in segtmp[a:i]:  # 扫描情感词前的程度词
                         if w in degree_words:
+                            print('*' + w)
                             poscount *= degree_weight(degree_words[w])
                         elif w in inv_dict:
+                            print('!' + w)
                             c += 1
                     if not is_even(c):  # 扫描情感词前的否定词数
                         poscount *= -1.0
@@ -142,8 +144,10 @@ def sent_scores(data):
                     d = 0
                     for w in segtmp[a:i]:
                         if w in degree_words:
+                            print('*' + w)
                             negcount *= degree_weight(degree_weight(w))
                         elif w in inv_dict:
+                            print('!' + w)
                             d += 1
                     if not is_even(d):
                         negcount *= -1.0
@@ -186,7 +190,7 @@ def sent_scores(data):
     return count2
 
 
-# 碾压；五星；四星；二星，一星；想给你生孩子；过誉；艹；混蛋；
+# 碾压；五星；四星；二星，一星；想给你生孩子；过誉；艹；混蛋；木有；
 
 
 if __name__ == '__main__':
@@ -204,7 +208,7 @@ if __name__ == '__main__':
     assert len(rating) == len(comments)
     print(len(rating))
 
-    cnt = 5
+    cnt = 50
 
     # seg_comments = [jieba.cut(c, cut_all=False) for c in comments[:cnt]]
     # for i, sc in enumerate(seg_comments):
@@ -226,10 +230,11 @@ if __name__ == '__main__':
     # for sents in sents_cmts:
     #     for s in sents:
     #         print(s)
-    scores = sent_scores(sents_cmts)
+    # scores = sent_scores(sents_cmts)
     # print(scores)
-    #
+
+    # TODO: no degree words are used??
     for i, sents in enumerate(sents_cmts):
         for s in sents:
             print(s)
-        print(scores[i])
+        print(sent_scores([sents]))
