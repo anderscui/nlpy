@@ -57,6 +57,7 @@ def degree_weight(degree):
     try:
         i = degrees.index(degree)
     except ValueError:
+        print(degree)
         print('degree not found')
         i = -1
     if i >= 0:
@@ -74,12 +75,12 @@ def cut_sentence(words):
     token = None
     for word in words:
         if word in punt_list and token not in punt_list:  # 检查标点符号下一个字符是否还是标点
-            sents.append(words[start:i+1])
-            start = i+1
+            sents.append(words[start:i + 1])
+            start = i + 1
             i += 1
         else:
             i += 1
-            token = list(words[start:i+2]).pop()  # 取下一个字符
+            token = list(words[start:i + 2]).pop()  # 取下一个字符
     if start < len(words):
         sents.append(words[start:])
     return sents
@@ -99,99 +100,79 @@ def segmentation(sentence, para):
 
 
 def sent_scores(data):
-
-    count1 = []
-    count2 = []
+    review_score = []
+    all_scores = []
 
     for sents in data:
         for sent in sents:
             segtmp = segmentation(sent, 'list')
 
-            i = 0  #记录扫描到的词的位置
-            a = 0  #记录情感词的位置
-            poscount = 0  #积极词的第一次分值
-            poscount2 = 0  #积极词反转后的分值
-            poscount3 = 0  #积极词的最后分值（包括叹号的分值）
-            negcount = 0
-            negcount2 = 0
-            negcount3 = 0
+            i = 0  # 记录扫描到的词的位置
+            a = 0  # 记录情感词的位置
+
+            pos_score = 0
+            neg_score = 0
 
             for word in segtmp:
-                if word in pos_words:  # 判断词语是否是情感词
+                # print(word)
+                if word in pos_words:
                     print('+' + word)
-                    poscount += 1
-                    c = 0
-                    for w in segtmp[a:i]:  # 扫描情感词前的程度词
-                        if w in degree_words:
-                            print('*' + w)
-                            poscount *= degree_weight(degree_words[w])
-                        elif w in inv_dict:
-                            print('!' + w)
-                            c += 1
-                    if not is_even(c):  # 扫描情感词前的否定词数
-                        poscount *= -1.0
-                        poscount2 += poscount
-                        poscount = 0
-                        poscount3 = poscount + poscount2 + poscount3
-                        poscount2 = 0
-                    else:
-                        poscount3 = poscount + poscount2 + poscount3
-                        poscount = 0
-                    a = i + 1  # 情感词的位置变化
-                elif word in neg_words:  # 消极情感的分析，与上面一致
-                    print('-' + word)
-                    negcount += 1
-                    d = 0
+                    cur_pos_score = 1
                     for w in segtmp[a:i]:
                         if w in degree_words:
                             print('*' + w)
-                            negcount *= degree_weight(degree_weight(w))
+                            cur_pos_score *= degree_weight(degree_words[w])
                         elif w in inv_dict:
                             print('!' + w)
-                            d += 1
-                    if not is_even(d):
-                        negcount *= -1.0
-                        negcount2 += negcount
-                        negcount = 0
-                        negcount3 = negcount + negcount2 + negcount3
-                        negcount2 = 0
+                            cur_pos_score *= -1
+
+                    if cur_pos_score < 0:
+                        neg_score += (-cur_pos_score)
                     else:
-                        negcount3 = negcount + negcount2 + negcount3
-                        negcount = 0
+                        pos_score += cur_pos_score
+
                     a = i + 1
-                elif word == '！'.decode('utf8') or word == '!'.decode('utf8'):  # 判断句子是否有感叹号
-                    for w2 in segtmp[::-1]:  # 扫描感叹号前的情感词，发现后权值+2，然后退出循环
-                        if w2 in pos_words or neg_words:
-                            poscount3 += 2
-                            negcount3 += 2
+                elif word in neg_words:
+                    print('-' + word)
+                    cur_neg_score = 1
+                    for w in segtmp[a:i]:
+                        if w in degree_words:
+                            print('*' + w)
+                            cur_neg_score *= degree_weight(degree_weight(w))
+                        elif w in inv_dict:
+                            print('!' + w)
+                            cur_neg_score *= -1
+
+                    if cur_neg_score < 0:
+                        pos_score += (-cur_neg_score)
+                    else:
+                        neg_score += cur_neg_score
+
+                    a = i + 1
+                elif word == '！'.decode('utf8') or word == '!'.decode('utf8'):
+                    for w2 in segtmp[::-1]:  # 扫描感叹号前的情感词
+                        if w2 in pos_words:
+                            pos_score += 2
                             break
-                    i += 1
+                        elif w2 in neg_words:
+                            neg_score += 2
+                            break
+                i += 1
 
-            #以下是防止出现负数的情况
-            pos_count = 0
-            neg_count = 0
-            if poscount3 < 0 and negcount3 > 0:
-                neg_count += negcount3 - poscount3
-                pos_count = 0
-            elif negcount3 < 0 and poscount3 > 0:
-                pos_count = poscount3 - negcount3
-                neg_count = 0
-            elif poscount3 < 0 and negcount3 < 0:
-                neg_count = -poscount3
-                pos_count = -negcount3
-            else:
-                pos_count = poscount3
-                neg_count = negcount3
+            review_score.append([pos_score, neg_score])
+        all_scores.append(review_score)
+        review_score = []
 
-            count1.append([pos_count, neg_count])
-        count2.append(count1)
-        count1 = []
-
-    return count2
+    return all_scores
 
 
 # 碾压；五星；四星；二星，一星；想给你生孩子；过誉；艹；混蛋；木有；
 
+def stars_to_sentiments(s):
+    if s > 3:
+        return 1
+    else:
+        return -1
 
 if __name__ == '__main__':
     # clear_non_sentiments()
@@ -200,15 +181,17 @@ if __name__ == '__main__':
     reviews = load_small()
     assert len(reviews) == 10000
     # for r in reviews[:10]:
-    #     print(r[0])
+    # print(r[0])
     #     print(r[1])
 
     rating = [r[0] for r in reviews if r[0] != 3]
+    sentiments = [stars_to_sentiments(r) for r in rating]
     comments = [r[1] for r in reviews if r[0] != 3]
     assert len(rating) == len(comments)
     print(len(rating))
 
     cnt = 50
+    # print(sentiments[:cnt])
 
     # seg_comments = [jieba.cut(c, cut_all=False) for c in comments[:cnt]]
     # for i, sc in enumerate(seg_comments):
@@ -226,15 +209,39 @@ if __name__ == '__main__':
     # for w in pos_words[:10]:
     #     print(w)
 
-    sents_cmts = [cut_sentence(c) for c in comments[:cnt]]
+    start = 6005
+    end = 6010
+    sents_cmts = [cut_sentence(c) for c in comments[start:end]]
+    # for sents in sents_cmts:
+    #     for s in sents:
+    #         print(s)
+    scores = sent_scores(sents_cmts)
+    print(scores)
+    #
+    # # TODO: no degree words are used??
+    # for i, sents in enumerate(sents_cmts):
+    #     for s in sents:
+    #         print(s)
+    #     print(sent_scores([sents]))
+
+    # c_comments = [u'很棒',
+    #               u'非常好',
+    #               u'不失望，也不用强求太多，这就是一种情怀。',
+    #               u'剧情靠一边，先爽再说',
+    #               u'勉强及格，看得我好累',
+    #               u'娱乐大片，难道就不能看。',
+    #               u'很爽',
+    #               u'1-6都看过，非常刺激！',
+    #               u'动作场面挺过瘾的，就是情节弱了点~']
+    # sents_cmts = [cut_sentence(c) for c in c_comments]
     # for sents in sents_cmts:
     #     for s in sents:
     #         print(s)
     # scores = sent_scores(sents_cmts)
     # print(scores)
 
-    # TODO: no degree words are used??
-    for i, sents in enumerate(sents_cmts):
-        for s in sents:
-            print(s)
-        print(sent_scores([sents]))
+    # # TODO: no degree words are used??
+    # for i, sents in enumerate(sents_cmts):
+    #     # for s in sents:
+    #     #     print(s)
+    #     print(sent_scores([sents]))
