@@ -70,17 +70,17 @@ def degree_weight(degree):
 
 
 def cut_sentence(words):
-    # words = (words).decode('utf8')
     start = 0
     i = 0
     sents = []
     punt_list = ',.!?:;~，。！？：；～'.decode('utf8')
     token = None
     for word in words:
-        if word in punt_list and token not in punt_list:  # 检查标点符号下一个字符是否还是标点
-            sents.append(words[start:i + 1])
-            start = i + 1
-            i += 1
+        if word in punt_list:
+            if token and token not in punt_list:  # 检查标点符号下一个字符是否还是标点
+                sents.append(words[start:i + 1])
+                start = i + 1
+                i += 1
         else:
             i += 1
             token = list(words[start:i + 2]).pop()  # 取下一个字符
@@ -212,9 +212,6 @@ if __name__ == '__main__':
     # small data
     reviews = load_small()
     assert len(reviews) == 10000
-    # for r in reviews[:10]:
-    # print(r[0])
-    # print(r[1])
 
     rating = [r[0] for r in reviews]
     sentiments = [stars_to_sentiments(r) for r in rating]
@@ -223,7 +220,7 @@ if __name__ == '__main__':
     # print(len(rating))
 
     start = 0
-    end = 2000
+    end = len(rating)
     sents_cmts = [cut_sentence(c) for c in comments[start:end]]
     scores = sent_scores(sents_cmts)
     final_scores = final_sentiments(scores)
@@ -232,10 +229,15 @@ if __name__ == '__main__':
     total = len(scores)
     diff = 0
     for i, s in enumerate(scores):
-        # print(total_scores[i], sentiments[i])
         if total_scores[i] != sentiments[i]:
             diff += 1
-    print(1 - (diff / 500.0))
+    print(1 - (diff * 1.0 / total))
+
+    # c = u'很好！喜欢！'
+    # c = u'！！！'
+    # cs = cut_sentence(c)
+    # for s in cs:
+    #     print(s)
 
     # c_comments = [u'很棒',
     #               u'非常好',
