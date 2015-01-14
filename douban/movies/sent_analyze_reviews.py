@@ -1,4 +1,7 @@
 # coding=utf-8
+
+import numpy as np
+
 import jieba
 from common.persistence import from_pickle, to_pickle
 
@@ -57,8 +60,8 @@ def degree_weight(degree):
     try:
         i = degrees.index(degree)
     except ValueError:
-        print(degree)
-        print('degree not found')
+        # print(degree)
+        # print('degree not found')
         i = -1
     if i >= 0:
         w = dweights[i]
@@ -116,14 +119,14 @@ def sent_scores(data):
             for word in segtmp:
                 # print(word)
                 if word in pos_words:
-                    print('+' + word)
+                    # print('+' + word)
                     cur_pos_score = 1
                     for w in segtmp[a:i]:
                         if w in degree_words:
-                            print('*' + w)
+                            # print('*' + w)
                             cur_pos_score *= degree_weight(degree_words[w])
                         elif w in inv_dict:
-                            print('!' + w)
+                            # print('!' + w)
                             cur_pos_score *= -1
 
                     if cur_pos_score < 0:
@@ -133,14 +136,14 @@ def sent_scores(data):
 
                     a = i + 1
                 elif word in neg_words:
-                    print('-' + word)
+                    # print('-' + word)
                     cur_neg_score = 1
                     for w in segtmp[a:i]:
                         if w in degree_words:
-                            print('*' + w)
+                            # print('*' + w)
                             cur_neg_score *= degree_weight(degree_weight(w))
                         elif w in inv_dict:
-                            print('!' + w)
+                            # print('!' + w)
                             cur_neg_score *= -1
 
                     if cur_neg_score < 0:
@@ -166,13 +169,42 @@ def sent_scores(data):
     return all_scores
 
 
+def final_sentiments(scores):
+    final = []
+    for s in scores:
+        sa = np.array(s)
+        pos = np.sum(sa[:, 0])
+        neg = np.sum(sa[:, 1])
+        pos_avg = np.mean(sa[:, 0])
+        neg_avg = np.mean(sa[:, 1])
+        total = pos_avg - neg_avg
+        pos_std = np.std(sa[:, 0])
+        neg_std = np.std(sa[:, 1])
+
+        final.append([pos, neg, pos_avg, neg_avg, pos_std, neg_std, total])
+
+    return final
+
+
 # 碾压；五星；四星；二星，一星；想给你生孩子；过誉；艹；混蛋；木有；
 
 def stars_to_sentiments(s):
     if s > 3:
         return 1
+    elif s == 3:
+        return 0
     else:
         return -1
+
+
+def score_to_sentiments(s):
+    if s > 0:
+        return 1
+    elif s < 0:
+        return -1
+    else:
+        return 0
+
 
 if __name__ == '__main__':
     # clear_non_sentiments()
@@ -182,47 +214,28 @@ if __name__ == '__main__':
     assert len(reviews) == 10000
     # for r in reviews[:10]:
     # print(r[0])
-    #     print(r[1])
+    # print(r[1])
 
-    rating = [r[0] for r in reviews if r[0] != 3]
+    rating = [r[0] for r in reviews]
     sentiments = [stars_to_sentiments(r) for r in rating]
-    comments = [r[1] for r in reviews if r[0] != 3]
+    comments = [r[1] for r in reviews]
     assert len(rating) == len(comments)
-    print(len(rating))
+    # print(len(rating))
 
-    cnt = 50
-    # print(sentiments[:cnt])
-
-    # seg_comments = [jieba.cut(c, cut_all=False) for c in comments[:cnt]]
-    # for i, sc in enumerate(seg_comments):
-    #     print(comments[i])
-    #     print "/ ".join(sc)
-
-
-    # pos_words = load_pos_words()
-    # neg_words = load_neg_words()
-    # inv_dict = load_inv_dict()
-    # degree_words = load_degree_words()
-    # stopwords = load_stopwords()
-
-    # print('pos words')
-    # for w in pos_words[:10]:
-    #     print(w)
-
-    start = 6005
-    end = 6010
+    start = 0
+    end = 2000
     sents_cmts = [cut_sentence(c) for c in comments[start:end]]
-    # for sents in sents_cmts:
-    #     for s in sents:
-    #         print(s)
     scores = sent_scores(sents_cmts)
-    print(scores)
-    #
-    # # TODO: no degree words are used??
-    # for i, sents in enumerate(sents_cmts):
-    #     for s in sents:
-    #         print(s)
-    #     print(sent_scores([sents]))
+    final_scores = final_sentiments(scores)
+    total_scores = [score_to_sentiments(fs[6]) for fs in final_scores]
+
+    total = len(scores)
+    diff = 0
+    for i, s in enumerate(scores):
+        # print(total_scores[i], sentiments[i])
+        if total_scores[i] != sentiments[i]:
+            diff += 1
+    print(1 - (diff / 500.0))
 
     # c_comments = [u'很棒',
     #               u'非常好',
@@ -239,9 +252,3 @@ if __name__ == '__main__':
     #         print(s)
     # scores = sent_scores(sents_cmts)
     # print(scores)
-
-    # # TODO: no degree words are used??
-    # for i, sents in enumerate(sents_cmts):
-    #     # for s in sents:
-    #     #     print(s)
-    #     print(sent_scores([sents]))
