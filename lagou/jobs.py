@@ -21,13 +21,11 @@ def make_soup(url):
 
 def save_html(url):
     html = urlopen(url).read()
-    # print(html)
-    # write('lagou.txt', html)
-    return BeautifulSoup(html, "lxml")
+    write('./lagou.txt', html.decode('utf-8'))
 
 
 def make_soup_from_file():
-    html = read_all('lagou.txt')
+    html = read_all('./lagou.txt')
     return BeautifulSoup(html, 'lxml')
 
 
@@ -62,7 +60,11 @@ if __name__ == '__main__':
     city = u'上海'
     pn = 1
     url = make_url(keyword, city, 1)
+    print(url)
     # soup = make_soup(job_list_url)
     # print(soup.title)
 
-    save_html(url)
+    soup = make_soup_from_file()
+    print(soup.title.string)
+    pos_list = soup.find('ul', 'hot_pos')
+    print(len(pos_list))
