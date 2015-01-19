@@ -7,20 +7,21 @@ from common.chinese import read_all, write
 
 BASE_URL = 'http://www.lagou.com/jobs/'
 
-job_list_url = u'http://www.lagou.com/jobs/list_{0}?kd={0}&spc=1&pl=&gj=&xl=&yx=&gx=&st=&labelWords=&lc=&workAddress=&city={1}&requestId=&pn={2}'
+job_list_url = u'http://www.lagou.com/jobs/list_{0}?kd={1}&spc=1&pl=&gj=&xl=&yx=&gx=&st=&labelWords=&lc=&workAddress=&city={2}&requestId=&pn={3}'
 
 
 def make_url(keyword, city, pn):
-    return job_list_url.format(keyword, city, pn)
+    return job_list_url.format(keyword, keyword, city, pn)
 
 
 def make_soup(url):
-    html = urlopen(url).read()
+    html = urlopen(url.encode('utf-8')).read()
     return BeautifulSoup(html, "lxml")
 
 
 def save_html(url):
-    html = urlopen(url).read()
+    html = urlopen(url.encode('utf-8')).read()
+    print(html)
     write('./lagou.txt', html.decode('utf-8'))
 
 
@@ -64,7 +65,15 @@ if __name__ == '__main__':
     # soup = make_soup(job_list_url)
     # print(soup.title)
 
+    # save_html(url)
+
     soup = make_soup_from_file()
     print(soup.title.string)
-    pos_list = soup.find('ul', 'hot_pos')
-    print(len(pos_list))
+    pos_list = soup.find('ul', 'hot_pos reset')
+    # print(pos_list)
+    p_pos = pos_list.find_all('li', recursive=False)
+
+    for pos in p_pos:
+        spans = pos.find_all("span")
+        for s in spans:
+            print(s.text)

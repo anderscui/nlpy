@@ -12,8 +12,8 @@
 
 <title>找工作-互联网招聘求职网-拉勾网</title>
 <meta property="qc:admins" content="23635710066417756375" />
-<meta content="找工作,招聘网,求职网,互联网招聘,拉勾网是互联网领域垂直招聘网站,互联网职业机会尽在拉勾网" name="description">
-<meta content="找工作,招聘网,招聘信息,互联网招聘" name="keywords">
+<meta content="上海找工作,上海招聘网,上海求职网,上海互联网招聘,拉勾网是互联网领域垂直招聘网站,互联网职业机会尽在拉勾网" name="description">
+<meta content="上海找工作,上海招聘网,上海求职网,上海互联网招聘" name="keywords">
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
 
 <!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
@@ -21,16 +21,16 @@
 var ctx = "http://www.lagou.com";
 var rctx = "http://hr.lagou.com";
 </script><link rel="Shortcut Icon" href="http://www.lagou.com/images/favicon.ico">
-<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/style.css?v=1.5.5.7_0115"/>
-<link rel="stylesheet" type="text/css" href="http://hr.lagou.com/css/style.css?v=1.5.5.7_0115"/>
-<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/external.min.css?v=1.5.5.7_0115"/>
-<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/popup.css?v=1.5.5.7_0115"/>
-<script src="http://www.lagou.com/js/libs/jquery.1.10.1.min.js?v=1.5.5.7_0115" type="text/javascript"></script>
-<script type="text/javascript" src="http://www.lagou.com/js/libs/jquery.lib.min.js?v=1.5.5.7_0115"></script>
-<script src="http://www.lagou.com/js/ajaxfileupload.js?v=1.5.5.7_0115" type="text/javascript"></script>
-<script type="text/javascript" src="http://www.lagou.com/js/additional-methods.js?v=1.5.5.7_0115"></script>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/style.css?v=1.5.5.7_0119"/>
+<link rel="stylesheet" type="text/css" href="http://hr.lagou.com/css/style.css?v=1.5.5.7_0119"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/external.min.css?v=1.5.5.7_0119"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/popup.css?v=1.5.5.7_0119"/>
+<script src="http://www.lagou.com/js/libs/jquery.1.10.1.min.js?v=1.5.5.7_0119" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/jquery.lib.min.js?v=1.5.5.7_0119"></script>
+<script src="http://www.lagou.com/js/ajaxfileupload.js?v=1.5.5.7_0119" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/additional-methods.js?v=1.5.5.7_0119"></script>
 <!--[if lte IE 8]>
-    <script type="text/javascript" src="http://www.lagou.com/js/assets/excanvas.js?v=1.5.5.7_0115"></script>
+    <script type="text/javascript" src="http://www.lagou.com/js/assets/excanvas.js?v=1.5.5.7_0119"></script>
 <![endif]-->
 <script type="text/javascript">
 var youdao_conv_id = 271546; 
@@ -45,6 +45,7 @@ var youdao_conv_id = 271546;
     		<a href="http://www.lagou.com/" class="logo"></a>
     		<ul class="reset" id="navheader">
     			<li ><a href="http://www.lagou.com/">首页</a></li>
+    			    			<li ><a href="http://www.lagou.com/gongsi/" >公司</a></li>
     			    			<li ><a href="http://www.lagou.com/toForum.html" target="_blank" rel="nofollow">论坛</a></li>
     				    			<li ><a href="http://www.lagou.com/resume/basic.html" rel="nofollow">我的简历</a></li>
 	    							    			<li ><a href="http://www.lagou.com/corpPosition/create.html" rel="nofollow">发布职位</a></li>
@@ -121,7 +122,60 @@ var youdao_conv_id = 271546;
             <div class="qq_ad2" style="margin-bottom:20px;"></div>
             <!-- 对外合作广告位  -->
             <!-- 对外合作广告位  -->
-             	                                                 
+             	            
+<!-- 请置于所有广告位代码之前 -->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+BAIDU_CLB_preloadSlots("944569","944568","944567","944566","944565","944564");
+</script>
+
+<!-- 广告位：搜索广告位-数据挖掘1 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944564");</script>				
+				
+<!-- 广告位：搜索广告位-数据挖掘2 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944565");</script>
+
+<!-- 广告位：搜索广告位-数据挖掘3 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944566");</script>
+
+<!-- 广告位：搜索广告位-数据挖掘4 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944567");</script>
+
+<!-- 广告位：搜索广告位-数据挖掘5 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944568");</script>
+
+<!-- 广告位：搜索广告位-数据挖掘6 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944569");</script>
+			
+				
+		                                			
+<!-- 请置于所有广告位代码之前 -->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+BAIDU_CLB_preloadSlots("944645","944644","944643","944642","944640");
+</script>
+			
+<!-- 广告位：主站搜索广告位-其它1 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944640");</script>			
+			
+<!-- 广告位：主站搜索广告位-其它2 -->
+<!-- <script type="text/javascript">BAIDU_CLB_fillSlot("944641");</script> -->	
+			
+<!-- 广告位：主站搜索广告位-其它3 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944642");</script>			
+			
+<!-- 广告位：主站搜索广告位-其它4 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944643");</script>			
+			
+<!-- 广告位：主站搜索广告位-其它5 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944644");</script>	
+		
+<!-- 广告位：主站搜索广告位-其它6 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944645");</script>			
+		
+		
+
+	                     
 	        <img src="http://www.lagou.com/images/partime_weixin.png" width="233" height="145" alt="找实习，扫我吧" class="partime_weixin"/>
         </div>
         <div class="content">
@@ -132,7 +186,7 @@ var youdao_conv_id = 271546;
         	<li data-searchtype="4">公司</li>
         	        </ul>
         <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value="{0}"  placeholder="请输入职位名称，如：产品经理"  />
+        <input type="text" id="search_input" name = "kd"  tabindex="1" value="数据挖掘"  placeholder="请输入职位名称，如：产品经理"  />
         <input type="hidden" name="spc" id="spcInput" value="1"/>
         <input type="hidden" name="pl" id="plInput" value=""/>
         <input type="hidden" name="gj" id="gjInput" value=""/>
@@ -143,7 +197,7 @@ var youdao_conv_id = 271546;
         <input type="hidden" name="labelWords" id="labelWords" value="" />
         <input type="hidden" name="lc" id="lc" value="" />
         <input type="hidden" name="workAddress" id="workAddress" value=""/>
-                <input type="hidden" name="city" id="cityInput" value="{1}"/>
+                <input type="hidden" name="city" id="cityInput" value="上海"/>
                 <input type="hidden" name="requestId" id="requestId" value=""/>
         <input type="submit" id="search_button" value="搜索" />
     </form>
@@ -157,7 +211,7 @@ var youdao_conv_id = 271546;
 .ui-menu-item a{display:block;overflow:hidden;}
 </style>
 <dl class="hotSearch"></dl>
-<script type="text/javascript" src="http://www.lagou.com/js/search/search.min.js?v=1.5.5.7_0115"></script>			<div class="breakline"></div>
+<script type="text/javascript" src="http://www.lagou.com/js/search/search.min.js?v=1.5.5.7_0119"></script>			<div class="breakline"></div>
             <dl class="workplace" id="workplaceSelect">
                 <dt class="fl">工作地点：</dt>
 				               	               			               		<dd>
@@ -169,7 +223,7 @@ var youdao_conv_id = 271546;
 		                	|
 		                			                </dd>
 	               	               	               			               		<dd>
-	               					                	<a href="http://www.lagou.com/shanghai-zhaopin/" >上海</a> 
+	               					                	<a href="http://www.lagou.com/shanghai-zhaopin/" class="current">上海</a> 
 		                	|
 		                			                </dd>
 	               	               	               			               		<dd>
@@ -206,11 +260,13 @@ var youdao_conv_id = 271546;
 		    				    						    			    						    		<dl>
 			    			<dt>ABCDEF</dt>
 			    			<dd>
+			     						     				<a href="http://www.lagou.com/baoding-zhaopin/">保定</a>
 			     						     				<a href="http://www.lagou.com/beijing-zhaopin/">北京</a>
 			     						     				<a href="http://www.lagou.com/changchun-zhaopin/">长春</a>
 			     						     				<a href="http://www.lagou.com/chengdu-zhaopin/">成都</a>
 			     						     				<a href="http://www.lagou.com/chongqing-zhaopin/">重庆</a>
 			     						     				<a href="http://www.lagou.com/changsha-zhaopin/">长沙</a>
+			     						     				<a href="http://www.lagou.com/changshu-zhaopin/">常熟</a>
 			     						     				<a href="http://www.lagou.com/changzhou-zhaopin/">常州</a>
 			     						     				<a href="http://www.lagou.com/dongguan-zhaopin/">东莞</a>
 			     						     				<a href="http://www.lagou.com/dalian-zhaopin/">大连</a>
@@ -305,19 +361,510 @@ var youdao_conv_id = 271546;
             	<a href="javascript:;">我知道了</a>
             </div>
             
-                        	<!--没有搜索结果       -->
-            	<div class="noresult">
-               		 暂时没有符合该搜索条件的职位 <br />
-                	<span>请重新修改搜索条件后再进行搜索</span>
-            	</div>
-                    </div>	
+            	            <ul class="hot_pos reset">
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/221374.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>10k-20k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>福利补贴，绩效考核，商业保险。。。</span>
+			                        <br />
+			                        <span>2014-12-18</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/221374.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/1686.html" title="爱奇艺" target="_blank">爱奇艺</a></div>
+			                        <span><em class="c7">领域： </em>社会化营销,视频多媒体</span>
+			                        			                        <span><em class="c7">创始人：</em> 龚宇</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(D轮及以上)</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>绩效奖金</li>
+			                            				                            			                            				                            		<li>五险一金</li>
+			                            				                            			                            				                            		<li>交通补助</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/409406.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>8k-16k</span>
+			                        <span><em class="c7">经验：</em> 应届毕业生</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>3亿A轮融资+广阔发展平台+股权激励</span>
+			                        <br />
+			                        <span>3天前发布</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/409406.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/5120.html" title="Avazu" target="_blank">Avazu</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,移动广告</span>
+			                        			                        <span><em class="c7">创始人：</em> 石一</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(A轮)</span>
+			                        <span><em class="c7">规模： </em>150-500人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>期权激励</li>
+			                            				                            			                            				                            		<li>奖金分红丰厚</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/283567.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-25k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>弹性工作时间 期权鼓励 标配MBA 丰厚期权</span>
+			                        <br />
+			                        <span>2015-01-11</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/283567.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/23099.html" title="饿了么" target="_blank">饿了么</a></div>
+			                        <span><em class="c7">领域： </em>O2O</span>
+			                        			                        <span><em class="c7">创始人：</em> 张旭豪</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(D轮及以上)</span>
+			                        <span><em class="c7">规模： </em>500-2000人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>免费班车</li>
+			                            				                            			                            				                            		<li>带薪年假</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/411674.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>16k-25k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>交通方便+有班车接送</span>
+			                        <br />
+			                        <span>1天前发布</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/411674.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/49773.html" title="圣荷赛" target="_blank">圣荷赛</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,云计算\大数据</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(A轮)</span>
+			                        <span><em class="c7">规模： </em>50-150人</span>
+			                        <ul class="companyTags reset">
+			                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/248231.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>18k-25k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>硕士</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>美国发展机会 优厚股票期权</span>
+			                        <br />
+			                        <span>2015-01-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/248231.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/36863.html" title="品而 Pier" target="_blank">品而 Pier</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,金融互联网</span>
+			                        			                        <span><em class="c7">创始人：</em> 创始团队</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(A轮)</span>
+			                        <span><em class="c7">规模： </em>15-50人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>绩效奖金</li>
+			                            				                            			                            				                            		<li>岗位晋升</li>
+			                            				                            			                            				                            		<li>扁平管理</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/120609.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-30k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>硕士</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>待遇给力</span>
+			                        <br />
+			                        <span>2014-12-04</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/120609.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/1706.html" title="大众点评网" target="_blank">大众点评网</a></div>
+			                        <span><em class="c7">领域： </em>电子商务,O2O</span>
+			                        			                        <span><em class="c7">创始人：</em> 张涛</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(D轮及以上)</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>吃货多</li>
+			                            				                            			                            				                            		<li>胖子多</li>
+			                            				                            			                            				                            		<li>美女多</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/356702.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>6k-10k</span>
+			                        <span><em class="c7">经验：</em> 不限</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>发展前景</span>
+			                        <br />
+			                        <span>2015-01-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/356702.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/29183.html" title="慧流科技" target="_blank">慧流科技</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,云计算\大数据</span>
+			                        			                        <span><em class="c7">创始人：</em> 段毅钧</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(天使轮)</span>
+			                        <span><em class="c7">规模： </em>15-50人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>岗位晋升</li>
+			                            				                            			                            				                            		<li>扁平管理</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/377959.html?source=search" title="数据挖掘工程师" target="_blank">数据挖掘工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-30k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>五险一金、补充商业医疗保险、餐补</span>
+			                        <br />
+			                        <span>2015-01-14</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/377959.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/3786.html" title="宜信公司" target="_blank">宜信公司</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,金融互联网</span>
+			                        			                        <span><em class="c7">创始人：</em> 唐宁</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(D轮及以上)</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>管理规范</li>
+			                            				                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>扁平管理</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/352790.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-18k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>年终分红+专项奖金+年底双薪</span>
+			                        <br />
+			                        <span>2015-01-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/352790.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/36911.html" title="易跃移动" target="_blank">易跃移动</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,游戏</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(B轮)</span>
+			                        <span><em class="c7">规模： </em>150-500人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>年底双薪</li>
+			                            				                            			                            				                            		<li>免费班车</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/333363.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>18k-25k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>绩效奖金+带薪年假+岗位晋升</span>
+			                        <br />
+			                        <span>2015-01-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/333363.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/39412.html" title="通耀信息科技" target="_blank">通耀信息科技</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,游戏</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(B轮)</span>
+			                        <span><em class="c7">规模： </em>50-150人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>年底双薪</li>
+			                            				                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>绩效奖金</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/393980.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-30k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>硕士</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>高福利＋弹性工作空间＋潜力巨大</span>
+			                        <br />
+			                        <span>2015-01-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/393980.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/43709.html" title="AppBank" target="_blank">AppBank</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,社交</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(A轮)</span>
+			                        <span><em class="c7">规模： </em>少于15人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>年底双薪</li>
+			                            				                            			                            				                            		<li>带薪年假</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/371743.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>8k-12k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>双休、弹性工作、地铁站附近</span>
+			                        <br />
+			                        <span>2015-01-12</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/371743.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/16107.html" title="Vlinkage" target="_blank">Vlinkage</a></div>
+			                        <span><em class="c7">领域： </em>社会化营销,视频多媒体</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(天使轮)</span>
+			                        <span><em class="c7">规模： </em>少于15人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>专项奖金</li>
+			                            				                            			                            				                            		<li>五险一金</li>
+			                            				                            			                            				                            		<li>弹性工作</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/392482.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>17k-23k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>年终分红+股票期权+专项奖金</span>
+			                        <br />
+			                        <span>2015-01-11</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/392482.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/36911.html" title="易跃移动" target="_blank">易跃移动</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,游戏</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(B轮)</span>
+			                        <span><em class="c7">规模： </em>150-500人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>年底双薪</li>
+			                            				                            			                            				                            		<li>免费班车</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/403697.html?source=search" title="数据挖掘工程师" target="_blank">数据挖掘工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>9k-18k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>带薪年假，弹性工作制，补充医疗保险，培训</span>
+			                        <br />
+			                        <span>2015-01-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/403697.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/9637.html" title="易传媒" target="_blank">易传媒</a></div>
+			                        <span><em class="c7">领域： </em>云计算大数据,移动互联网</span>
+			                        			                        <span><em class="c7">创始人：</em> 闫方军 Alan Yan</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(D轮及以上)</span>
+			                        <span><em class="c7">规模： </em>500-2000人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>技术大拿扎堆</li>
+			                            				                            			                            				                            		<li>带薪年假</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/384537.html?source=search" title="数据挖掘" target="_blank">数据挖掘</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>12k-16k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>成为下一个阿里巴巴的早期技术骨干</span>
+			                        <br />
+			                        <span>2014-12-29</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/384537.html?source=search" target="_blank">投个简历</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/27068.html" title="比格彼特" target="_blank">比格彼特</a></div>
+			                        <span><em class="c7">领域： </em>O2O,云计算\大数据</span>
+			                        			                        <span><em class="c7">创始人：</em> 唐林芳</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(未融资)</span>
+			                        <span><em class="c7">规模： </em>少于15人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>股票期权</li>
+			                            				                            			                            				                            		<li>五险一金</li>
+			                            				                            			                            				                            		<li>弹性工作</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    	            </ul>
+	                        	<div class="Pagination"></div>
+            	                    </div>	
 
 <script>
 $(function(){
 	/***************************
  	 * 分页
  	 */
- 		
+ 	 						$('.Pagination').pager({
+		      currPage: 1,
+		      pageNOName: "pn",
+		      form: "searchForm",
+		      pageCount: 5,
+		      pageSize:  5 
+		});
+		
 	$(".workplace dd").not('.more').children('a').click(function(){
 		var cityVal = $(this).text();
 		var cityjob = $('#box_expectCity').attr("data-cityjob");
@@ -462,10 +1009,10 @@ function editForm(inputId,inputValue){
 		</div>
 	</div>
 
-<script type="text/javascript" src="http://www.lagou.com/js/core.min.js?v=1.5.5.7_0115"></script>
-<script type="text/javascript" src="http://www.lagou.com/js/popup.min.js?v=1.5.5.7_0115"></script>
-<script type="text/javascript" src="http://www.lagou.com/js/libs/tongji.js?v=1.5.5.7_0115"></script>
-<script type="text/javascript" src="http://www.lagou.com/js/libs/analytics.js?v=1.5.5.7_0115"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/core.min.js?v=1.5.5.7_0119"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/popup.min.js?v=1.5.5.7_0119"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/tongji.js?v=1.5.5.7_0119"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/analytics.js?v=1.5.5.7_0119"></script>
 <script type="text/javascript">
 $(function(){
 	//判断初始化页面时 是否隐藏提示框以及红点的显示
