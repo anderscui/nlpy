@@ -1,4 +1,4 @@
-from common.io import read, read_lines
+from common.io import read_lines
 
 # file_name = './read_file.txt'
 # whole = read(file_name)
