@@ -1,9 +1,16 @@
+# coding=utf-8
+import re
+
 from bs4 import BeautifulSoup
 from urllib2 import urlopen
 from common.chinese import write, read_all
 from common.persistence import to_pickle, from_pickle
 
 BASE_URL = 'http://www.lagou.com/'
+
+
+def make_search_url(urlfmt, keyword, city, pn):
+    return urlfmt.format(keyword, city, pn)
 
 
 def make_html(url):
@@ -14,30 +21,26 @@ def make_soup(html):
     return BeautifulSoup(html, "lxml")
 
 
-def get_category_links(section_url):
-    soup = make_soup(section_url)
-    boccat = soup.find('dl', 'boccat')
-    category_links = [BASE_URL + dd.a['href'] for dd in boccat.findAll('dd')]
-
-    return category_links
+def save_jobs_html(url, skill, pn=1):
+    html = urlopen(url.encode('utf-8')).read()
+    write(u'./html/{0}_{1}.html'.format(skill, pn), html.decode('utf-8'))
+    return html
 
 
-def get_category_winner(category_url):
-    soup = make_soup(category_url)
-    category = soup.find('h1', 'headline').string
+def download_search_results(skill_url_fmt, kd, city, page):
+    url = make_search_url(skill_url_fmt, kd, city, page)
+    html = save_jobs_html(url, kd, page)
 
-    print(category)
-    if not category:
-        winner = None
-        runners_up = None
-    else:
-        winner = [h2.string for h2 in soup.findAll('h2', 'boc1')]
-        runners_up = [h2.string for h2 in soup.findAll('h2', 'boc2')]
+    currPage = re.search(r'currPage: (\d+)', html)
+    pageCount = re.search(r'pageCount: (\d+)', html)
 
-    return {"category": category,
-            "category_url": category_url,
-            "winner": winner,
-            "runners_up": runners_up}
+    if currPage and pageCount:
+        curr = int(currPage.group(1))
+        pageCount = int(pageCount.group(1))
+
+        if curr < pageCount:
+            download_search_results(skill_url_fmt, kd, city, curr+1)
+
 
 
 def save_html(url, file_name):
@@ -47,12 +50,12 @@ def save_html(url, file_name):
     print(html)
     write('./html/' + file_name, html.decode('utf-8'))
 
-
-def save_jobs_html(url, skill, pn=1):
-    html = urlopen(url).read()
-    print(html)
-    write('./html/' + '{0}_{1}.html'.format(skill, pn), html.decode('utf-8'))
-
+#
+# def save_jobs_html(url, skill, pn=1):
+#     html = urlopen(url.encode('utf-8')).read()
+#     print(html)
+#     write('./html/' + '{0}_{1}.html'.format(skill, pn), html.decode('utf-8'))
+#
 
 def category_contents(cat_tag):
     header = cat_tag.find('div', 'menu_main').find('h2').text
@@ -64,10 +67,6 @@ def category_contents(cat_tag):
     for sub in sub_cats_tags:
         sub_cat_name = sub.find('dt').find('a').text.strip()
         sub_cat_list = [(kw.text, kw['href']) for kw in sub.find('dd').find_all('a')]
-
-        # print(sub_cat_name)
-        # for t, h in sub_cat_list:
-        #     print('\t-' + t + ' - ' + h)
 
         sub_cats.append((sub_cat_name, sub_cat_list))
 
@@ -88,7 +87,7 @@ if __name__ == '__main__':
     # cat_tags = main_navs.find_all('div', 'menu_box')
     # cats = {}
     # for i, cat in enumerate(cat_tags):
-    #     cats[i] = category_contents(cat)
+    # cats[i] = category_contents(cat)
     #
     # for i in cats:
     #     cat = cats[i]
@@ -100,22 +99,42 @@ if __name__ == '__main__':
     #
     # to_pickle(cats, 'cats.pkl')
 
-    cats = from_pickle('cats.pkl')
-    for i in cats:
-        cat = cats[i]
-        print(u'** cat {0}: {1} **'.format(i, cat['name']))
-        for sub in cat['sub_cats']:
-            print(sub[0])
-            for skill, href in sub[1]:
-                print('\t-' + skill + ' - ' + href)
+    # cats = from_pickle('cats.pkl')
+    # for i in cats:
+    #     cat = cats[i]
+    #     print(u'** cat {0}: {1} **'.format(i, cat['name']))
+    #     for sub in cat['sub_cats']:
+    #         print(sub[0])
+    #         for skill, href in sub[1]:
+    #             print('\t-' + skill + ' - ' + href)
 
-
-    # for i, j in enumerate(range(5, 10)):
-    #     print(i, j)
 
     # ## jobs of one skill
-    # skill_url = 'http://www.lagou.com/zhaopin/ziranyuyanchuli?labelWords=label'
+    skill_url = BASE_URL + 'jobs/list_{0}?kd={0}&spc=1&pl=&gj=&xl=&yx=&gx=&st=&labelWords=label&lc=&workAddress=&city' \
+                           '={1}&requestId=&pn={2}'
+    skill_url = unicode(skill_url)
+    # # skill_url = 'http://www.lagou.com/zhaopin/ziranyuyanchuli?labelWords=label'
     # spelling = 'ziranyuyanchuli'
-    # page = 1
-    # save_jobs_html(skill_url, spelling, page)
+    page = 1
+    city = u'全国'
+    kd = u'自然语言处理'
+    search_url = make_search_url(skill_url, kd, city, page)
+
+    download_search_results(skill_url, kd, city, page)
+    # print(search_url)
+    # save_jobs_html(search_url, spelling, page)
+
+    # # parse job list html
+    # html = read_all('./html/ziranyuyanchuli_1.html')
+    # soup = make_soup(html)
+    #
+    # m = re.search(r'currPage: (\d+)', html)
+    # print(m.group(1))
+    # curr = re.search(r"currPagef: (\d+)", html).group(1)
+    # pageCount = re.search(r"pageCounft: (\d+)", html).group(1)
+    # print(curr)
+    # print(pageCount)
+
+
+    job_detail_url_format = 'http://www.lagou.com/jobs/143205.html?source=search'
 

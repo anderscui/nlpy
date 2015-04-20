@@ -1,0 +1,1217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=7;IE=EDGE">
+<meta charset="utf-8">
+
+<title>找工作-互联网招聘求职网-拉勾网</title>
+<meta property="qc:admins" content="23635710066417756375" />
+<meta content="找工作,招聘网,求职网,互联网招聘,拉勾网是互联网领域垂直招聘网站,互联网职业机会尽在拉勾网" name="description">
+<meta content="找工作,招聘网,招聘信息,互联网招聘" name="keywords">
+<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+
+
+<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
+<script type="text/javascript">
+var ctx = "http://www.lagou.com";
+var rctx = "http://hr.lagou.com";
+var pctx = "http://passport.lagou.com";
+
+var frontLogin = "http://www.lagou.com/frontLogin.do";
+var frontLogout = "http://www.lagou.com/frontLogout.do";
+var frontRegister = "http://www.lagou.com/frontRegister.do";
+
+</script>
+
+<script defer id="_lgpassport_" data-css-site="1" data-css-popup="1" src="http://passport.lagou.com/static/js/passport.js" onload="passportInit()"></script>
+
+<script type="text/javascript">
+	function passportInit(){
+					
+			//alert("not log in ");
+			/* 设置自动登录监听器 */
+			PASSPORT.on('autologin:succ', function(userInfo) {
+				window.location.reload();
+			});
+			PASSPORT.on('autologin:fail', function(data) {
+
+			});
+			// 触发自动登录
+			PASSPORT.auto();
+
+			/* 设置弹窗登录监听器 */
+			PASSPORT.on('popuplogin:succ', function(data) {
+				window.location.reload();
+			});
+			PASSPORT.on('popuplogin:fail', function(data) {
+				
+			});
+
+			// 触发弹窗登录
+			//PASSPORT.popup();
+			
+			//var passport_login_pop = $('.passport_login_pop');
+			$('.passport_login_pop').each(function(){
+				$(this).click(function(){
+					PASSPORT.popup();
+				});
+			})
+           
+                
+	}
+</script><link rel="Shortcut Icon" href="http://www.lagou.com/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/style.css?v=1.5.6_041622"/>
+<link rel="stylesheet" type="text/css" href="http://hr.lagou.com/css/style.css?v=1.5.6_041622"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/external.min.css?v=1.5.6_041622"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/popup.css?v=1.5.6_041622"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/activity.css?v=1.5.6_041622"/>
+<script src="http://www.lagou.com/js/libs/jquery.1.10.1.min.js?v=1.5.6_041622" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/jquery.lib.min.js?v=1.5.6_041622"></script>
+<script src="http://www.lagou.com/js/ajaxfileupload.js?v=1.5.6_041622" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/timeCountDown.js?v=1.5.6_041622"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/additional-methods.js?v=1.5.6_041622"></script>
+<!--[if lte IE 8]>
+    <script type="text/javascript" src="http://www.lagou.com/js/assets/excanvas.js?v=1.5.6_041622"></script>
+<![endif]-->
+</head>
+<body>
+<!-- <div class="activity_end">
+     <a class="activity_main" href="http://www.lagou.com/marchActivity/index.html" target="_blank"></a>
+</div> -->
+<script>
+	function callback(response) {
+	    if(response.success==true&&response.state==1){
+	        $("#nowrap").parent().addClass('plus-vip');
+	        $('#accountSetting')[0].href="http://hr.lagou.com/baseinfo/accountDetail.html";
+	    }
+	}
+    jQuery.ajax({
+        url:"http://hr.lagou.com/plus/getVipTip.json",
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback'
+    }).done(function (response) {
+        callback && callback(response);
+    });
+</script>
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);    
+            },
+            futureDate: -3723634189,
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+<div id="body">
+			<div id="top_bannerC">
+    <a class="" href="http://www.lagou.com/april/index.html" target="_blank"></a>
+</div>		<div id="header">
+    	<div class="wrapper">
+    		<a href="http://www.lagou.com/" class="logo"></a>
+    		<ul class="reset" id="navheader">
+    			<li ><a href="http://www.lagou.com/?f=m">首页</a></li>
+    			    			<li ><a href="http://www.lagou.com/gongsi/" >公司</a></li>
+    			    			<!-- <li ><a href="http://www.lagou.com/toForum.html" target="_blank" rel="nofollow">论坛</a></li> -->
+    				    			<li ><a href="http://www.lagou.com/resume/basic.html" rel="nofollow">我的简历</a></li>
+	    							    			<li ><a href="http://www.lagou.com/corpPosition/create.html" rel="nofollow">发布职位</a></li>
+	    						    		</ul> 
+        	            <ul class="loginTop">
+            	<li><a href="http://www.lagou.com/frontLogin.do" rel="nofollow">登录</a></li> 
+            	<li>|</li>
+            	<li><a href="http://www.lagou.com/frontRegister.do" rel="nofollow">注册</a></li>
+            </ul>
+                    </div>
+    </div><!-- end #header -->
+    <!-- 数据展示类接口需要版本号 -->
+    <input type="hidden" id="version" value="1.5.6_041622">
+    <div id="container">
+    
+       	<div class="sidebar">
+       		            <div id="options" class="greybg">
+                                <dl >
+                   	<dt>月薪范围 <em ></em></dt>
+	                <dd >
+	                    	                    	<div>2k以下</div>
+	                    	                    	<div>2k-5k</div>
+	                    	                    	<div>5k-10k</div>
+	                    	                    	<div>10k-15k</div>
+	                    	                    	<div>15k-25k</div>
+	                    	                    	<div>25k-50k</div>
+	                    	                    	<div>50k以上</div>
+	                    	                </dd> 
+                </dl>
+                                <dl >
+                   	<dt>工作经验 <em ></em></dt>
+	                <dd >
+	                    	                    	<div>不限</div>
+	                    	                    	<div>应届毕业生</div>
+	                    	                    	<div>1年以下</div>
+	                    	                    	<div>1-3年</div>
+	                    	                    	<div>3-5年</div>
+	                    	                    	<div>5-10年</div>
+	                    	                    	<div>10年以上</div>
+	                    	                </dd> 
+                </dl>
+                                <dl >
+                   	<dt>最低学历 <em ></em></dt>
+	                <dd >
+	                    	                    	<div>不限</div>
+	                    	                    	<div>大专</div>
+	                    	                    	<div>本科</div>
+	                    	                    	<div>硕士</div>
+	                    	                    	<div>博士</div>
+	                    	                </dd> 
+                </dl>
+                                <dl >
+                   	<dt>工作性质 <em ></em></dt>
+	                <dd >
+	                    	                    	<div>全职</div>
+	                    	                    	<div>兼职</div>
+	                    	                    	<div>实习</div>
+	                    	                </dd> 
+                </dl>
+                                <dl >
+                   	<dt>发布时间 <em ></em></dt>
+	                <dd >
+	                    	                    	<div>今天</div>
+	                    	                    	<div>3天内</div>
+	                    	                    	<div>一周内</div>
+	                    	                    	<div>一月内</div>
+	                    	                </dd> 
+                </dl>
+                            </div>
+            
+            <!-- QQ群 -->
+            <div class="qq_ad" style="margin-bottom:20px;"></div>
+            <!-- 广告位：主站搜索--QQ群 -->
+            <script type="text/javascript" >BAIDU_CLB_SLOT_ID = "946969";</script>
+            <script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script>
+            <div class="qq_ad2" style="margin-bottom:20px;"></div>
+            <!-- 对外合作广告位  -->
+            <!-- 对外合作广告位  -->
+             	                                    			
+<!-- 请置于所有广告位代码之前 -->
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+BAIDU_CLB_preloadSlots("944645","944644","944643","944642","944640");
+</script>
+			
+<!-- 广告位：主站搜索广告位-其它1 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944640");</script>			
+			
+<!-- 广告位：主站搜索广告位-其它2 -->
+<!-- <script type="text/javascript">BAIDU_CLB_fillSlot("944641");</script> -->	
+			
+<!-- 广告位：主站搜索广告位-其它3 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944642");</script>			
+			
+<!-- 广告位：主站搜索广告位-其它4 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944643");</script>			
+			
+<!-- 广告位：主站搜索广告位-其它5 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944644");</script>	
+		
+<!-- 广告位：主站搜索广告位-其它6 -->
+<script type="text/javascript">BAIDU_CLB_fillSlot("944645");</script>			
+		
+		
+
+	                     
+	        <img src="http://www.lagou.com/images/partime_weixin.png" width="233" height="145" alt="找实习，扫我吧" class="partime_weixin"/>
+        </div>
+        <div class="content">
+                    	<div id="search_box">
+		<form id="searchForm" name="searchForm" action="http://www.lagou.com/jobs/list_" method="get">
+        <ul id="searchType">
+        	        	<li data-searchtype="1" class="type_selected">职位</li>
+        	<li data-searchtype="4">公司</li>
+        	        </ul>
+        <div class="searchtype_arrow"></div>
+        <input type="text" id="search_input" name = "kd"  tabindex="1" value="自然语言处理"  placeholder="请输入职位名称，如：产品经理"  />
+        <input type="hidden" name="spc" id="spcInput" value="1"/>
+        <input type="hidden" name="pl" id="plInput" value=""/>
+        <input type="hidden" name="gj" id="gjInput" value=""/>
+        <input type="hidden" name="xl" id="xlInput" value=""/>
+        <input type="hidden" name="yx" id="yxInput" value=""/>
+        <input type="hidden" name="gx" id="gxInput" value="" />
+        <input type="hidden" name="st" id="stInput" value="" />
+        <input type="hidden" name="labelWords" id="labelWords" value="label" />
+        <input type="hidden" name="lc" id="lc" value="" />
+        <input type="hidden" name="workAddress" id="workAddress" value=""/>
+                <input type="hidden" name="city" id="cityInput" value="全国"/>
+                <input type="hidden" name="requestId" id="requestId" value=""/>
+        <input type="submit" id="search_button" value="搜索" />
+    </form>
+    <input type="hidden" id="search_py" value=""/>
+    <input type="hidden" id="isIndex" value=""/>
+</div>
+<style>
+.ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #00b38a;}
+.ui-autocomplete-category{font-size:16px;color:#999;width:50px;position: absolute;z-index:11; right: 0px;/*top: 6px; */text-align:center;border-top: 1px dashed #e5e5e5;padding:5px 0;}
+.ui-menu-item{ *width:439px;vertical-align: middle;position: relative;margin: 0px;margin-right: 50px !important;background:#fff;border-right: 1px dashed #ededed;}
+.ui-menu-item a{display:block;overflow:hidden;}
+</style>
+<dl class="hotSearch"></dl>
+<script type="text/javascript" src="http://www.lagou.com/js/search/search.min.js?v=1.5.6_041622"></script>			<div class="breakline"></div>
+            <dl class="workplace" id="workplaceSelect">
+                <dt class="fl">工作地点：</dt>
+				               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/zhaopin/" class="current">全国</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/beijing-zhaopin/" >北京</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/shanghai-zhaopin/" >上海</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/guangzhou-zhaopin/" >广州</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/shenzhen-zhaopin/" >深圳</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/chengdu-zhaopin/" >成都</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/hangzhou-zhaopin/" >杭州</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/wuhan-zhaopin/" >武汉</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd>
+	               					                	<a href="http://www.lagou.com/nanjing-zhaopin/" >南京</a> 
+		                	|
+		                			                </dd>
+	               	               	               			               		<dd class="more">
+		                	<a href="javascript:;" >其他</a> 
+		                	<div class="triangle citymore_arrow"></div>
+		               	</dd>
+	               	               	                <dd id="box_expectCity" class="searchlist_expectCity dn" data-cityjob="false">
+	            	<span class="bot"></span>
+	            	<span class="top"></span>
+		    				    						    			    						    		<dl>
+			    			<dt>ABCDEF</dt>
+			    			<dd>
+			     						     				<a href="http://www.lagou.com/baoding-zhaopin/">保定</a>
+			     						     				<a href="http://www.lagou.com/beijing-zhaopin/">北京</a>
+			     						     				<a href="http://www.lagou.com/changchun-zhaopin/">长春</a>
+			     						     				<a href="http://www.lagou.com/chengdu-zhaopin/">成都</a>
+			     						     				<a href="http://www.lagou.com/chongqing-zhaopin/">重庆</a>
+			     						     				<a href="http://www.lagou.com/changsha-zhaopin/">长沙</a>
+			     						     				<a href="http://www.lagou.com/changshu-zhaopin/">常熟</a>
+			     						     				<a href="http://www.lagou.com/chaoyang-zhaopin/">朝阳</a>
+			     						     				<a href="http://www.lagou.com/changzhou-zhaopin/">常州</a>
+			     						     				<a href="http://www.lagou.com/dongguan-zhaopin/">东莞</a>
+			     						     				<a href="http://www.lagou.com/dalian-zhaopin/">大连</a>
+			     						     				<a href="http://www.lagou.com/foshan-zhaopin/">佛山</a>
+			     						     				<a href="http://www.lagou.com/fuzhou-zhaopin/">福州</a>
+			     						    			</dd>
+			    	  	</dl>
+			    	  				    			    						    		<dl>
+			    			<dt>GHIJ</dt>
+			    			<dd>
+			     						     				<a href="http://www.lagou.com/guilin-zhaopin/">桂林</a>
+			     						     				<a href="http://www.lagou.com/guiyang-zhaopin/">贵阳</a>
+			     						     				<a href="http://www.lagou.com/guangzhou-zhaopin/">广州</a>
+			     						     				<a href="http://www.lagou.com/ganzhou-zhaopin/">赣州</a>
+			     						     				<a href="http://www.lagou.com/haerbin-zhaopin/">哈尔滨</a>
+			     						     				<a href="http://www.lagou.com/hefei-zhaopin/">合肥</a>
+			     						     				<a href="http://www.lagou.com/huhehaote-zhaopin/">呼和浩特</a>
+			     						     				<a href="http://www.lagou.com/haikou-zhaopin/">海口</a>
+			     						     				<a href="http://www.lagou.com/hangzhou-zhaopin/">杭州</a>
+			     						     				<a href="http://www.lagou.com/huizhou-zhaopin/">惠州</a>
+			     						     				<a href="http://www.lagou.com/huzhou-zhaopin/">湖州</a>
+			     						     				<a href="http://www.lagou.com/jinhua-zhaopin/">金华</a>
+			     						     				<a href="http://www.lagou.com/jiangmen-zhaopin/">江门</a>
+			     						     				<a href="http://www.lagou.com/jinan-zhaopin/">济南</a>
+			     						     				<a href="http://www.lagou.com/jining-zhaopin/">济宁</a>
+			     						     				<a href="http://www.lagou.com/jiaxing-zhaopin/">嘉兴</a>
+			     						     				<a href="http://www.lagou.com/jiangyin-zhaopin/">江阴</a>
+			     						    			</dd>
+			    	  	</dl>
+			    	  				    			    						    		<dl>
+			    			<dt>KLMN</dt>
+			    			<dd>
+			     						     				<a href="http://www.lagou.com/kunming-zhaopin/">昆明</a>
+			     						     				<a href="http://www.lagou.com/kunshan-zhaopin/">昆山</a>
+			     						     				<a href="http://www.lagou.com/liaocheng-zhaopin/">聊城</a>
+			     						     				<a href="http://www.lagou.com/langfang-zhaopin/">廊坊</a>
+			     						     				<a href="http://www.lagou.com/luoyang-zhaopin/">洛阳</a>
+			     						     				<a href="http://www.lagou.com/linyi-zhaopin/">临沂</a>
+			     						     				<a href="http://www.lagou.com/lanzhou-zhaopin/">兰州</a>
+			     						     				<a href="http://www.lagou.com/liuzhou-zhaopin/">柳州</a>
+			     						     				<a href="http://www.lagou.com/maanshan-zhaopin/">马鞍山</a>
+			     						     				<a href="http://www.lagou.com/mianyang-zhaopin/">绵阳</a>
+			     						     				<a href="http://www.lagou.com/ningbo-zhaopin/">宁波</a>
+			     						     				<a href="http://www.lagou.com/nanchang-zhaopin/">南昌</a>
+			     						     				<a href="http://www.lagou.com/nanjing-zhaopin/">南京</a>
+			     						     				<a href="http://www.lagou.com/nanning-zhaopin/">南宁</a>
+			     						     				<a href="http://www.lagou.com/nantong-zhaopin/">南通</a>
+			     						    			</dd>
+			    	  	</dl>
+			    	  				    			    						    		<dl>
+			    			<dt>OPQR</dt>
+			    			<dd>
+			     						     				<a href="http://www.lagou.com/qingdao-zhaopin/">青岛</a>
+			     						     				<a href="http://www.lagou.com/quanzhou-zhaopin/">泉州</a>
+			     						    			</dd>
+			    	  	</dl>
+			    	  				    			    						    		<dl>
+			    			<dt>STUV</dt>
+			    			<dd>
+			     						     				<a href="http://www.lagou.com/shanghai-zhaopin/">上海</a>
+			     						     				<a href="http://www.lagou.com/shijiazhuang-zhaopin/">石家庄</a>
+			     						     				<a href="http://www.lagou.com/shantou-zhaopin/">汕头</a>
+			     						     				<a href="http://www.lagou.com/shaoxing-zhaopin/">绍兴</a>
+			     						     				<a href="http://www.lagou.com/shenyang-zhaopin/">沈阳</a>
+			     						     				<a href="http://www.lagou.com/shenzhen-zhaopin/">深圳</a>
+			     						     				<a href="http://www.lagou.com/suzhou-zhaopin/">苏州</a>
+			     						     				<a href="http://www.lagou.com/tianjin-zhaopin/">天津</a>
+			     						     				<a href="http://www.lagou.com/tangshan-zhaopin/">唐山</a>
+			     						     				<a href="http://www.lagou.com/taiyuan-zhaopin/">太原</a>
+			     						     				<a href="http://www.lagou.com/taizhou1-zhaopin/">台州</a>
+			     						    			</dd>
+			    	  	</dl>
+			    	  				    			    						    		<dl>
+			    			<dt>WXYZ</dt>
+			    			<dd>
+			     						     				<a href="http://www.lagou.com/weifang-zhaopin/">潍坊</a>
+			     						     				<a href="http://www.lagou.com/wuhan-zhaopin/">武汉</a>
+			     						     				<a href="http://www.lagou.com/wuhu-zhaopin/">芜湖</a>
+			     						     				<a href="http://www.lagou.com/weihai-zhaopin/">威海</a>
+			     						     				<a href="http://www.lagou.com/wulumuqi-zhaopin/">乌鲁木齐</a>
+			     						     				<a href="http://www.lagou.com/wuxi-zhaopin/">无锡</a>
+			     						     				<a href="http://www.lagou.com/wenzhou-zhaopin/">温州</a>
+			     						     				<a href="http://www.lagou.com/xian-zhaopin/">西安</a>
+			     						     				<a href="http://www.lagou.com/xianggang-zhaopin/">香港</a>
+			     						     				<a href="http://www.lagou.com/xiamen-zhaopin/">厦门</a>
+			     						     				<a href="http://www.lagou.com/xining-zhaopin/">西宁</a>
+			     						     				<a href="http://www.lagou.com/xuzhou-zhaopin/">徐州</a>
+			     						     				<a href="http://www.lagou.com/yinchuan-zhaopin/">银川</a>
+			     						     				<a href="http://www.lagou.com/yuncheng-zhaopin/">运城</a>
+			     						     				<a href="http://www.lagou.com/yancheng-zhaopin/">盐城</a>
+			     						     				<a href="http://www.lagou.com/yantai-zhaopin/">烟台</a>
+			     						     				<a href="http://www.lagou.com/zhuhai-zhaopin/">珠海</a>
+			     						     				<a href="http://www.lagou.com/zhaoqing-zhaopin/">肇庆</a>
+			     						     				<a href="http://www.lagou.com/zhongshan-zhaopin/">中山</a>
+			     						     				<a href="http://www.lagou.com/zhengzhou-zhaopin/">郑州</a>
+			     						    			</dd>
+			    	  	</dl>
+			    	  				    				    </dd>  
+            </dl>
+         
+            <div id="tip_didi" class="dn">
+            	<span>亲，“嘀嘀打车”已更名为“滴滴打车”了哦，我们已帮您自动跳转~</span>
+            	<a href="javascript:;">我知道了</a>
+            </div>
+            
+            	            <ul class="hot_pos reset">
+	                    		                    			                <li class="odd clearfix"  data-jobId="566144">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/566144.html?source=search" title="高级 自然语言处理工程师" target="_blank">高级 自然语言处理工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>20k-25k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>节日福利五险一金班车接送交通补反补</span>
+			                        <br />
+			                        <span>2015-04-14</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/566144.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/1922.html" title="乐视" target="_blank">乐视</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网,视频多媒体</span>
+			                        			                        <span><em class="c7">创始人：</em> 贾跃亭</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>上市公司</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>免费班车</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix" data-jobId="519017">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/519017.html?source=search" title="机器学习 NLP" target="_blank">机器学习 NLP</a> 
+			                            &nbsp;
+			                            <span class="c9">[杭州]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-30k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>行业技术大牛云集</span>
+			                        <br />
+			                        <span>2015-04-17</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/519017.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/108.html" title="蘑菇街" target="_blank">蘑菇街</a></div>
+			                        <span><em class="c7">领域： </em>电子商务</span>
+			                        			                        <span><em class="c7">创始人：</em> 陈琪</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(C轮)</span>
+			                        <span><em class="c7">规模： </em>500-2000人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>出国旅游</li>
+			                            				                            			                            				                            		<li>自主晋升计划</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix"  data-jobId="571695">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/571695.html?source=search" title="自然语言处理(高级)研发工程师" target="_blank">自然语言处理(高级)研发工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>18k-36k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>福利待遇好、发展前景好、工作环境好</span>
+			                        <br />
+			                        <span>2015-04-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/571695.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/57315.html" title="美团meituan.com" target="_blank">美团meituan.com</a></div>
+			                        <span><em class="c7">领域： </em>电子商务,O2O</span>
+			                        			                        <span><em class="c7">创始人：</em> 王兴</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(D轮及以上)</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>绩效奖金</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix" data-jobId="583997">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/583997.html?source=search" title="自然语言处理高级研发工程师" target="_blank">自然语言处理高级研发工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-30k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>上升期的O2O业务和最受欢迎的NLP算法岗位</span>
+			                        <br />
+			                        <span>2015-04-16</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/583997.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/57315.html" title="美团meituan.com" target="_blank">美团meituan.com</a></div>
+			                        <span><em class="c7">领域： </em>电子商务,O2O</span>
+			                        			                        <span><em class="c7">创始人：</em> 王兴</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(D轮及以上)</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>绩效奖金</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix"  data-jobId="136204">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/136204.html?source=search" title="自然语言处理研发工程师" target="_blank">自然语言处理研发工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>10k-20k</span>
+			                        <span><em class="c7">经验：</em> 不限</span>
+			                        <span><em class="c7">最低学历： </em>不限</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>真正做底层产品的公司，绝佳的能力提高机会</span>
+			                        <br />
+			                        <span>2015-04-13</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/136204.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/23613.html" title="Inter3i" target="_blank">Inter3i</a></div>
+			                        <span><em class="c7">领域： </em>企业服务,云计算\大数据</span>
+			                        			                        <span><em class="c7">创始人：</em> 董健</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(天使轮)</span>
+			                        <span><em class="c7">规模： </em>少于15人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>股票期权</li>
+			                            				                            			                            				                            		<li>五险一金</li>
+			                            				                            			                            				                            		<li>带薪年假</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix" data-jobId="281323">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/281323.html?source=search" title="高级自然语言处理工程师" target="_blank">高级自然语言处理工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-25k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>我们将创造一种全新的商业数据使用方式</span>
+			                        <br />
+			                        <span>2015-04-10</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/281323.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/18629.html" title="七森色" target="_blank">七森色</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(不需要融资)</span>
+			                        <span><em class="c7">规模： </em>15-50人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>免费饮料</li>
+			                            				                            			                            				                            		<li>带薪年假</li>
+			                            				                            			                            				                            		<li>绩效奖金</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix"  data-jobId="375085">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/375085.html?source=search" title="NLP研发工程师" target="_blank">NLP研发工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[深圳]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>20k-25k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>硕士</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>高额期权，挑战数据/技术难题，和牛人并肩</span>
+			                        <br />
+			                        <span>2015-04-16</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/375085.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/385.html" title="爱拼网|iPIN.com" target="_blank">爱拼网|iPIN.com</a></div>
+			                        <span><em class="c7">领域： </em>云计算\大数据</span>
+			                        			                        <span><em class="c7">创始人：</em> 杨洋</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(A轮)</span>
+			                        <span><em class="c7">规模： </em>15-50人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>发展迅猛</li>
+			                            				                            			                            				                            		<li>股票期权</li>
+			                            				                            			                            				                            		<li>管饭+零食</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix" data-jobId="211965">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/211965.html?source=search" title="资深搜索研发(自然语言处理NLP/机器学习)" target="_blank">资深搜索研发(自然语言处理NLP/机器学习)</a> 
+			                            &nbsp;
+			                            <span class="c9">[杭州]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>18k-30k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>公司高速发展；高并发；高挑战；快成长</span>
+			                        <br />
+			                        <span>2015-03-06</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/211965.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/108.html" title="蘑菇街" target="_blank">蘑菇街</a></div>
+			                        <span><em class="c7">领域： </em>电子商务</span>
+			                        			                        <span><em class="c7">创始人：</em> 陈琪</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成熟型(C轮)</span>
+			                        <span><em class="c7">规模： </em>500-2000人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                            				                            		<li>出国旅游</li>
+			                            				                            			                            				                            		<li>自主晋升计划</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix"  data-jobId="210085">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/210085.html?source=search" title="自然语言处理研究员" target="_blank">自然语言处理研究员</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-30k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>14薪</span>
+			                        <br />
+			                        <span>2015-04-15</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/210085.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/13613.html" title="中搜" target="_blank">中搜</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网</span>
+			                        			                        <span><em class="c7">创始人：</em> 陈沛</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>上市公司</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>股票期权</li>
+			                            				                            			                            				                            		<li>年底双薪</li>
+			                            				                            			                            				                            		<li>五险一金</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix" data-jobId="2764">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/2764.html?source=search" title="NLP专家" target="_blank">NLP专家</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>20k-40k</span>
+			                        <span><em class="c7">经验：</em> 不限</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>NLP在金融大数据行业创造更大价值</span>
+			                        <br />
+			                        <span>2015-03-23</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/2764.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/177.html" title="股票雷达" target="_blank">股票雷达</a></div>
+			                        <span><em class="c7">领域： </em>金融互联网,搜索</span>
+			                        			                        <span><em class="c7">创始人：</em> 冯月</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>成长型(B轮)</span>
+			                        <span><em class="c7">规模： </em>50-150人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>个人空间巨大</li>
+			                            				                            			                            				                            		<li>业务快速增长</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix"  data-jobId="534818">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/534818.html?source=search" title="自然语言处理工程师" target="_blank">自然语言处理工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[南京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>2k-4k</span>
+			                        <span><em class="c7">经验：</em> 不限</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>技术培训、绩效奖金、根据实习表现转正</span>
+			                        <br />
+			                        <span>2015-03-26</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/534818.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/42406.html" title="网感至察" target="_blank">网感至察</a></div>
+			                        <span><em class="c7">领域： </em>云计算\大数据</span>
+			                        			                        <span><em class="c7">创始人：</em> 李佳静</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(未融资)</span>
+			                        <span><em class="c7">规模： </em>15-50人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>股票期权</li>
+			                            				                            			                            				                            		<li>带薪年假</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix" data-jobId="510038">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/510038.html?source=search" title="自然语言处理研发工程师【上海】" target="_blank">自然语言处理研发工程师【上海】</a> 
+			                            &nbsp;
+			                            <span class="c9">[上海]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>20k-40k</span>
+			                        <span><em class="c7">经验：</em> 3-5年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>众里寻他千百度</span>
+			                        <br />
+			                        <span>2015-03-19</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/510038.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/9261.html" title="百度" target="_blank">百度</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网</span>
+			                        			                        <span><em class="c7">创始人：</em> 李彦宏</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>上市公司</span>
+			                        <span><em class="c7">规模： </em>2000人以上</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>年假</li>
+			                            				                            			                            				                            		<li>技能培训</li>
+			                            				                            			                            				                            		<li>节日礼物</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix"  data-jobId="586959">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/586959.html?source=search" title="自然语言处理，机器学习" target="_blank">自然语言处理，机器学习</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>15k-25k</span>
+			                        <span><em class="c7">经验：</em> 不限</span>
+			                        <span><em class="c7">最低学历： </em>不限</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>美国老师一对一英语训练,人手Mac,免费三餐</span>
+			                        <br />
+			                        <span>1天前发布</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/586959.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/33016.html" title="Eyespage" target="_blank">Eyespage</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网</span>
+			                        			                        <span><em class="c7">创始人：</em> Jack Zhou</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(天使轮)</span>
+			                        <span><em class="c7">规模： </em>少于15人</span>
+			                        <ul class="companyTags reset">
+			                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="clearfix" data-jobId="560463">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/560463.html?source=search" title="自然语言处理工程师（C++，python）" target="_blank">自然语言处理工程师（C++，python）</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>8k-16k</span>
+			                        <span><em class="c7">经验：</em> 1-3年</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>云搜索平台搭建 大数据 搜索引擎 稳定发展</span>
+			                        <br />
+			                        <span>2015-04-15</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/560463.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/25116.html" title="12580" target="_blank">12580</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(未融资)</span>
+			                        <span><em class="c7">规模： </em>500-2000人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>年终分红</li>
+			                            				                            			                            				                            		<li>年底双薪</li>
+			                            				                            			                            				                            		<li>五险一金</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    		                    			                <li class="odd clearfix"  data-jobId="390486">
+			                			                				                	<div class="hot_pos_l">
+			                        <div class="mb10">
+			                            <a href="http://www.lagou.com/jobs/390486.html?source=search" title="自然语言处理工程师" target="_blank">自然语言处理工程师</a> 
+			                            &nbsp;
+			                            <span class="c9">[北京]</span>
+			                            			                            			                        </div>
+			                        <span><em class="c7">月薪：</em>8k-16k</span>
+			                        <span><em class="c7">经验：</em> 不限</span>
+			                        <span><em class="c7">最低学历： </em>本科</span>
+			                        <br />
+			                        <span><em class="c7">职位诱惑：</em>接触搜索引擎</span>
+			                        <br />
+			                        <span>2015-03-11</span>
+			                    </div> 
+						        <div class="hot_pos_r">
+			                        <div class="apply">
+			                        				                        		<a href="http://www.lagou.com/jobs/390486.html?source=search" target="_blank">
+																								投个简历
+																							</a>
+			                        				                        </div>
+			                        <div class="mb10"><a href="http://www.lagou.com/gongsi/25116.html" title="12580" target="_blank">12580</a></div>
+			                        <span><em class="c7">领域： </em>移动互联网</span>
+			                        			                        <br />
+			                        <span><em class="c7">阶段： </em>初创型(未融资)</span>
+			                        <span><em class="c7">规模： </em>500-2000人</span>
+			                        <ul class="companyTags reset">
+			                            			                            				                            		<li>年终分红</li>
+			                            				                            			                            				                            		<li>年底双薪</li>
+			                            				                            			                            				                            		<li>五险一金</li>
+			                            				                            			                        </ul>
+			                    </div>
+			                 </li>
+			                
+	                    	            </ul>
+	                        	<div class="Pagination"></div>
+            	                    </div>	
+
+<script>
+$(function(){
+	/***************************
+ 	 * 分页
+ 	 */
+ 	 						$('.Pagination').pager({
+		      currPage: 5,
+		      pageNOName: "pn",
+		      form: "searchForm",
+		      pageCount: 7,
+		      pageSize:  5 
+		});
+		
+	$(".workplace dd").not('.more').children('a').click(function(){
+		var cityVal = $(this).text();
+		var cityjob = $('#box_expectCity').attr("data-cityjob");
+		if(cityjob == 'true'){
+			return true;
+		}else{
+			$('#lc').val(1);
+			editForm("cityInput" , cityVal);
+			return false;
+		}
+	});
+
+	$("#box_expectCity dd a").click(function(){
+		var cityjob = $('#box_expectCity').attr("data-cityjob");
+		var cityVal = $(this).text();
+		if(cityjob == 'true'){
+			return true;
+		}else{
+			$('#lc').val(1);
+			editForm("cityInput" , cityVal);
+			return false;
+		}
+	});
+	
+	$('#options dd div').click(function(){
+		var firstName = $(this).parents('dl').children('dt').text();
+		var fn = $.trim(firstName);
+		if (fn=="月薪范围"){
+			editForm("yxInput" , $(this).html());
+		}
+		else if(fn=="工作经验"){
+			editForm("gjInput" , $(this).html());
+		}
+		else if(fn=="最低学历"){
+			editForm("xlInput" , $(this).html());
+		}
+		else if(fn=="工作性质"){
+			editForm("gxInput" , $(this).html());
+		}
+		else if(fn=="发布时间"){
+			editForm("stInput" , $(this).html());
+		}
+	});
+	
+	$('#selected ul').delegate('li span.select_remove','click',function(event){
+		var firstName = $(this).parent('li').find('strong').text();
+		var fn = $.trim(firstName);
+		if (fn=="月薪范围")
+			editForm("yxInput" , "");
+		else if(fn=="工作经验")
+			editForm("gjInput" , "");
+		else if(fn=="最低学历")
+			editForm("xlInput" , "");
+		else if(fn=="工作性质")
+			editForm("gxInput" , "");
+		else if(fn=="发布时间")
+			editForm("stInput" , "");
+	});
+	
+	/* search结果飘绿	*/
+	(function($) {
+		var searchVal = $('#search_input').val();
+		var reg = /\s/g;     
+		searchVal = searchVal.replace(reg, "").split(""); 
+		
+		var resultL = '';
+		var resultR = '';
+		$('.hot_pos li').each(function(){
+			resultL = $('.hot_pos_l a',this).text().split("");
+			$.each(resultL,function(i,v){
+				if($.inArray(v.toLowerCase(),searchVal) != -1 || $.inArray(v.toUpperCase(),searchVal) != -1){
+					resultL[i] = '<span>'+ v +'</span>';
+				}
+			});
+			$('.hot_pos_l a',this).html(resultL.join(''));
+			
+			resultR = $('.hot_pos_r .mb10 a',this).text().split("");
+			$.each(resultR,function(i,v){
+				if($.inArray(v.toLowerCase(),searchVal) != -1 || $.inArray(v.toUpperCase(),searchVal) != -1){
+					resultR[i] = '<span>'+ v +'</span>';
+				}
+			});
+			$('.hot_pos_r .mb10 a',this).html(resultR.join(''));
+		});
+		
+	})(jQuery);
+	
+	//didi tip
+   	if($.cookie('didiTip') != 1 && false){
+		$('#tip_didi').show();
+	}
+	$('#tip_didi a').click(function(){
+		$(this).parent().remove();
+		$.cookie('didiTip',1,{ expires: 30, path: '/'});
+	});
+	
+	//统计到职位详情的来源脚本 add by Vee ｜2014-7-3
+	/* $('.hot_pos .hot_pos_l a').click(function(e){
+		e.preventDefault();
+		var href=$(this).attr("href");
+		window.location.href=href+"?source=search"; //搜索结果页
+	}); */
+	//end
+	$(".partime_delete").click(function(){
+		$(this).parent().hide() ;
+		$(".partime_weixin").show() ;
+	});
+    
+    //展示类数据接口
+    (function($){
+        var resList = $('.hot_pos').children('li');
+        var arr = [];
+        resList.each(function(){
+            var me = $(this);
+            arr.push( me.attr('data-jobId'));
+        });
+        var z = Math.random();
+        var jids = arr.join(',');
+        var v = $('#version').val();
+        var currUrl = encodeURIComponent( document.URL );
+        var params = {
+            v:v,
+            dl:currUrl,
+            jids:jids,
+            z:z
+        }
+        postoA(params);
+    })(jQuery)
+});
+
+function editForm(inputId,inputValue){
+	$("#"+inputId).val(inputValue);
+	var keyword = $.trim($('#search_input').val());
+	var reg =  /[`~!@\$%\^\&\*\(\)_<>\?:"\{\},\\\/;'\[\]]/ig;
+	var re = /#/g;
+	var r = /\./g;
+	var kw = keyword.replace(reg," ");
+	if(kw == ''){
+		$('#searchForm').attr('action','http://www.lagou.com/jobs/list_所有职位').submit();	
+	}else{
+		kw = kw.replace(re,'井');
+		kw = kw.replace(r,'。');
+		$('#searchForm').attr('action','http://www.lagou.com/jobs/list_'+kw).submit();
+	}
+	//$("#searchForm").submit();
+}
+</script>
+<script type="text/javascript">
+// 品友合作代码
+var py_position_name = $.trim( $('#search_input').val() );
+var _py = _py || [];
+_py.push(['a', 'ga..n3f5DPSWZXFMcbQa2-GxjX']);
+_py.push(['domain','stats.ipinyou.com']);
+_py.push(['e',py_position_name]);
+-function(d) {
+	var s = d.createElement('script'),
+	e = d.body.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e),
+	f = 'https:' == location.protocol;
+	s.src = (f ? 'https' : 'http') + '://' + ('www.lagou.com') + '/js/adv-sim.js?v=1.5.6_041622';
+}(document);
+</script>
+<noscript><img src="//stats.ipinyou.com/adv.gif?a=ga..n3f5DPSWZXFMcbQa2-GxjX&e=" style="display:none;"/></noscript>
+
+			<div class="clear"></div>
+			<input type="hidden" id="resubmitToken" value="" />
+	    	<a id="backtop" title="回到顶部" rel="nofollow"></a>
+	    	<!--product feedback-->
+	    	<!--我要反馈按钮-->
+<div id="product-fk">
+	<div id="feedback-icon">
+	<div class="fb-icon"></div>
+	<span>我要反馈</span>	
+	<em class="error dn fk-limit">今天已经反馈足够多了，给产品经理点时间消化下吧~<i></i></em>
+	<em class="error dn fk-suc">&nbsp;&nbsp;反馈提交成功！</em>
+</div>
+</div>
+
+<div id="feedback-con">
+	<div class="pfb-pho-close">
+		<div class="pfb-pho"></div>
+		<div class="pfb-close"></div>
+	</div>
+	<em class="error dn"><span>你还没填任何反馈呢</span><i></i></em>
+	<form id="product-fb">
+		<div class="pfb-txt">
+			<textarea placeholder="我是拉勾的产品经理哈丁，把你遇到的问题，或是想要的功能告诉我吧（200字以内）" maxlength="200"></textarea>
+		</div>
+		<div class="pfb-email" style="height:60px;">
+			<input type="text" name="email" placeholder="留下邮箱方便我们沟通（选填）"/>
+			<span class="ensure">确定</span>
+		</div>
+	</form>
+</div>
+<script>
+	// 关闭
+	//3s tips消失
+	var global = {}
+	global.email = "";
+	global.usertoken = $.cookie('user_trace_token');
+</script>	    </div><!-- end #container -->
+	</div><!-- end #body -->
+	<div id="footer">
+		<div class="wrapper">
+			<a href="http://www.lagou.com/qa.html?t=1" target="_blank" rel="nofollow">帮助中心</a>
+			<a href="http://www.lagou.com/about.html" target="_blank" rel="nofollow">联系我们</a>
+		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
+		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<i></i></a>
+			<div class="copyright">
+                <span>&copy;2015 Lagou </span>
+                <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow">京ICP备14023790号-2</a>
+                <span>京公网安备11010802017116号</span>
+            </div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="http://www.lagou.com/js/core.min.js?v=1.5.6_041622"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/popup.js?v=1.5.6_041622"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/tongji.js?v=1.5.6_041622"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/analytics.js?v=1.5.6_041622"></script>
+<!--copy账号系统的passport.html-->
+<script type="text/javascript">
+	function noticeInit(){
+        var userId = "";
+        var urls = {
+            //调用B端简历管理nav的数字
+            queryTipsNums : "http://hr.lagou.com/recruitment/queryTipsNums.json",
+            //调用B端简历管理Notice Tip
+            queryNotice : "http://hr.lagou.com/notice/queryNotice.json",
+            //调用C端用户的notice数字
+            getPushNoticeOfC : "http://www.lagou.com/common/getPushNoticeOfC.json",
+            //清空C端用户的notice
+            clearPushNoticeOfC : "http://www.lagou.com/common/clearPushNoticeOfC.json",
+            //清空B端用户的notice
+            clearAll : "http://hr.lagou.com/notice/clearAll.json"
+        }
+        
+        	}
+    
+    /*
+    * 全部清空notice
+    */
+    function clearNoticeTip(url){
+        PASSPORT.util.rpc({
+            params:{},
+            url:url,
+            succ:function(data){
+                $('#noticeTip').remove();
+                $("#noticeDot").addClass("dn");
+            },
+            fail:function(data){
+                 console.log('fail:' + data);
+            }
+        });
+    }
+</script></body>
+</html>
