@@ -11,7 +11,7 @@ import datetime
 from common.chinese import write, read_all
 from common.io import created_on
 from common.persistence import to_pickle, from_pickle
-from models import Job, Company
+from models import Job, Company, unified
 
 BASE_URL = 'http://www.lagou.com/'
 
@@ -192,13 +192,13 @@ def read_job_from_html(skill, html_file):
     pat = re.compile(r'(?P<comp_id>\d+)')
     m = re.search(pat, url)
     log(url)
-    Company.comp_id = int(m.group('comp_id'))
+    company.comp_id = int(m.group('comp_id'))
     job.comp_id = company.comp_id
 
     log(comp.dt.a.img['src'])
     log(comp.dt.a.div.h2.text.split()[0])
-    Company.logo = comp.dt.a.img['src']
-    Company.name = comp.dt.a.div.h2.text.split()[0]
+    company.logo = comp.dt.a.img['src']
+    company.name = comp.dt.a.div.h2.text.split()[0]
 
     log('')
     comp_features = comp.dd
@@ -307,7 +307,7 @@ if __name__ == '__main__':
     # print(save_job_detail_html(jid))
 
     start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
-    # start_skills = [u'Python', u'自然语言处理']
+    # start_skills = [u'自然语言处理']
     # cats = from_pickle('cats.pkl')
     # for i in cats:
     #     cat = cats[i]
@@ -372,34 +372,41 @@ if __name__ == '__main__':
 
     all_jobs = []
     all_comps = {}
+    all_jc = {}
     counter = 0
     for skill, detail_file in detail_html_paths:
         job = read_job_from_html(skill, detail_file)
-        # # job = read_job_from_html('./html/detail/Python_568103.html')
+        # job = read_job_from_html('./html/detail/Python_568103.html')
         if job:
             j, c = job
+
             all_jobs.append(j)
             if c.comp_id not in all_comps:
                 all_comps[c.comp_id] = c
 
             counter += 1
             print(counter)
+            uni = unified(j, c)
+            all_jc[j.job_id] = uni
 
     print(len(all_jobs))
     print(len(all_comps))
+    print(len(all_jc))
 
     to_pickle(all_jobs, 'jobs.pkl')
     to_pickle(all_comps, 'comps.pkl')
+    to_pickle(all_jc, 'unified.pkl')
 
     print(start)
     print(datetime.datetime.now())
 
-    # job = read_job_from_html('./html/detail/Python_538978.html')
-    # # job = read_job_from_html('./html/detail/Python_568103.html')
-    # if job:
-    #     j, c = job
-    #     show_obj(j)
-    #     print('')
-    #     show_obj(c)
+    # for k in all_jc:
+    #     print(all_jc[k]['comp_name'])
+
+    # print('')
+    # for k in all_comps:
+    #     show_obj(all_comps[k])
+
+
 
 

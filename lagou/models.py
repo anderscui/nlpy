@@ -58,6 +58,35 @@ class Job(Base):
         return "{0}: {1}, comp: {2}".format(self.job_id, self.title, self.company.name)
 
 
+def unified(job, comp):
+    # print(comp.name)
+    return {
+        'job_id': job.job_id,
+        'skill_tag': job.skill_tag,
+        'title': job.title,
+        'dept': job.dept,
+        'published_date': job.published_date,
+
+        'salary': job.salary,
+        'city': job.city,
+        'experience': job.experience,
+        'education': job.education,
+        'full_time': u'全职' if job.full_time else u'兼职',
+        'benefits': job.benefits,
+
+        'desc': job.desc,
+
+        'comp_id': job.comp_id,
+        'comp_name': comp.name,
+        'domain': comp.domain,
+        'size': comp.size,
+        'comp_url': comp.url,
+        'stage': comp.cur_stage,
+        'investor': comp.investor,
+        'address': comp.address
+    }
+
+
 if __name__ == '__main__':
     print(repr(Job.__table__))
     print(repr(Company.__table__))
