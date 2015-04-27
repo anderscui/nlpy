@@ -306,7 +306,7 @@ if __name__ == '__main__':
     # jid = 128328
     # print(save_job_detail_html(jid))
 
-    start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
+    # start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
     # start_skills = [u'自然语言处理']
     # cats = from_pickle('cats.pkl')
     # for i in cats:
@@ -355,6 +355,8 @@ if __name__ == '__main__':
     #         time.sleep(1)
     #     break
 
+    ### load job data from html files, time: 3 minutes for 2500 jobs.
+    start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
     start = datetime.datetime.now()
 
     os.chdir('./html/detail')
@@ -399,6 +401,7 @@ if __name__ == '__main__':
 
     print(start)
     print(datetime.datetime.now())
+    ### load job data from html files end.
 
     # for k in all_jc:
     #     print(all_jc[k]['comp_name'])
