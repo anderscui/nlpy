@@ -32,3 +32,20 @@ def read_lines(file_name):
         return f.readlines()
 
 
+import os
+import datetime
+
+
+def modified_on(filename):
+    t = os.path.getmtime(filename)
+    return datetime.datetime.fromtimestamp(t)
+
+
+def accessed_on(filename):
+    t = os.path.getatime(filename)
+    return datetime.datetime.fromtimestamp(t)
+
+
+def created_on(filename):
+    t = os.path.getctime(filename)
+    return datetime.datetime.fromtimestamp(t)

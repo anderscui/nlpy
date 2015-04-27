@@ -1,2 +1,4 @@
 *.pyc
 .idea/*
+crawlers/html/*.html
+crawlers/html/detail/*.html

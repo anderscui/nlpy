@@ -1,3 +1,4 @@
+# coding=utf-8
 import re
 
 pat = re.compile(r'hello')
@@ -58,6 +59,17 @@ for m in pat.finditer('one1two2three3four4'):
 # subn
 
 
+## urls
+url = 'http://www.lagou.com/gongsi/36911.html'
+url2 = 'http://www.lagou.com/gongsi/temp.html'
+pat = re.compile(r'(?P<comp_id>\d+)')
+m = re.search(pat, url)
+print(m.group('comp_id'))
 
+# no group here, check it before using.
+# m = re.search(pat, url2)
+# print(m.group('comp_id'))
+
+print(re.search('\d+', u'2天前').group(0))
 
 

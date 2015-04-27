@@ -23,3 +23,26 @@
         - <a href="#" title="7">尾页</a>
         
     
+- job detail
+    - title (and dept)
+    - date/time
+    - request
+        - salary
+        - city
+        - experience
+        - edu
+        - full-time?
+        - benefits
+    - jd
+
+- company info
+    - domain
+    - size
+    - url
+    - stage
+        - current
+        - investor
+    - address
+    
+- similar jobs
+    

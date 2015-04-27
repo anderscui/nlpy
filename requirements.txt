@@ -1,3 +1,4 @@
+sqlalchemy
 jieba
 BeautifulSoup
 #pip install beautifulsoup4
