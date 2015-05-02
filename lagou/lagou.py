@@ -242,6 +242,19 @@ def show_obj(obj):
         print(u'prop: {0}, val: {1}'.format(p, obj.__getattribute__(p)))
 
 
+def download_job_details(skill):
+    for f in glob.glob(skill + u'*.html'):
+        hp = os.path.join(os.getcwdu(), f)
+        print(f)
+
+        html = read_all(hp)
+        soup = make_soup(html)
+        for li in soup.find('ul', 'hot_pos reset').find_all('li', recursive=False):
+            save_job_detail_html(skill, li['data-jobid'])
+            print(li['data-jobid'] + ' downloaded.')
+            time.sleep(1)
+
+
 if __name__ == '__main__':
     # # home page - skills
     start_url = BASE_URL
@@ -269,7 +282,6 @@ if __name__ == '__main__':
 
 
     # ## jobs of one skill
-
     # # skill_url = 'http://www.lagou.com/zhaopin/ziranyuyanchuli?labelWords=label'
     # spelling = 'ziranyuyanchuli'
     # page = 1
@@ -324,27 +336,18 @@ if __name__ == '__main__':
     ### download jobs of specific skills
     start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET',
                     u'Java', u'C', u'PHP', u'Ruby', u'Node.js', u'iOS', u'Android', u'Javascript',
-                    u'MongoDB', u'产品经理', u'APP设计师', u'UI设计师', u'数据分析师', u'用户研究员']
-    # os.chdir('./html')
-    # print(os.getcwdu())
-    #
-    # for sc in start_skills:
-    #     for f in glob.glob(sc + u'*.html'):
-    #         hp = os.path.join(os.getcwdu(), f)
-    #         print(f)
-    #
-    #         html = read_all(hp)
-    #         soup = make_soup(html)
-    #         for li in soup.find('ul', 'hot_pos reset').find_all('li', recursive=False):
-    #             save_job_detail_html(sc, li['data-jobid'])
-    #             print(li['data-jobid'] + ' downloaded.')
-    #             time.sleep(1)
-    #         # break
-    # os.chdir('..')
-    # print(os.getcwdu())
+                    u'MongoDB', u'产品经理', u'APP设计师', u'UI设计师', u'数据分析师']
 
-    ### load job data from html files, time: 3 minutes for 2500 jobs.
-    #start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
+    os.chdir('./html')
+    print(os.getcwdu())
+
+    for sc in start_skills:
+        download_job_details(sc)
+
+    os.chdir('..')
+    print(os.getcwdu())
+
+    ### load job data from html files, time: 10 minutes for 9900 jobs.
     start = datetime.datetime.now()
 
     os.chdir('./html/detail')
@@ -352,7 +355,7 @@ if __name__ == '__main__':
 
     detail_html_paths = []
     for skill in start_skills:
-        for f in glob.glob(skill + u'*.html'):
+        for f in glob.glob(skill + u'_*.html'):
             hp = os.path.join(os.getcwdu(), f)
             # print(hp)
             detail_html_paths.append((skill, hp))
@@ -366,7 +369,6 @@ if __name__ == '__main__':
     counter = 0
     for skill, detail_file in detail_html_paths:
         job = read_job_from_html(skill, detail_file)
-        # job = read_job_from_html('./html/detail/Python_568103.html')
         if job:
             j, c = job
 
@@ -399,7 +401,4 @@ if __name__ == '__main__':
     # print('')
     # for k in all_comps:
     #     show_obj(all_comps[k])
-
-
-
 
