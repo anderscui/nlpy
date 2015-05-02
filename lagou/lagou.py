@@ -229,8 +229,9 @@ def read_job_from_html(skill, html_file):
 
     log('')
     # address
-    log(comp_features.div.text)
-    company.address = comp_features.div.text
+    if comp_features.div:
+        log(comp_features.div.text)
+        company.address = comp_features.div.text
 
     return job, company
 
@@ -320,20 +321,17 @@ if __name__ == '__main__':
     #                 print('downloading... ' + skill)
     #                 continue
 
+    ### download jobs of specific skills
+    start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET',
+                    u'Java', u'C', u'PHP', u'Ruby', u'Node.js', u'iOS', u'Android', u'Javascript',
+                    u'MongoDB', u'产品经理', u'APP设计师', u'UI设计师', u'数据分析师', u'用户研究员']
     # os.chdir('./html')
-    # print(glob.glob(u'Python*.html'))
-    # for f in glob.glob(u'自然语言处理*.html'):
-    #     print(f)
-
-    # os.chdir('./html')
-    # print(os.getcwd())
+    # print(os.getcwdu())
     #
-    # html_paths = []
     # for sc in start_skills:
     #     for f in glob.glob(sc + u'*.html'):
     #         hp = os.path.join(os.getcwdu(), f)
     #         print(f)
-    #         # html_paths.append(os.path.join('./html/', f))
     #
     #         html = read_all(hp)
     #         soup = make_soup(html)
@@ -343,20 +341,10 @@ if __name__ == '__main__':
     #             time.sleep(1)
     #         # break
     # os.chdir('..')
-    # print(os.getcwd())
-
-    # for hp in html_paths:
-    #     print(hp)
-    #     html = read_all(hp)
-    #     soup = make_soup(html)
-    #     for li in soup.find('ul', 'hot_pos reset').find_all('li', recursive=False):
-    #         save_job_detail_html(skill, li['data-jobid'])
-    #         print(li['data-jobid'] + ' downloaded.')
-    #         time.sleep(1)
-    #     break
+    # print(os.getcwdu())
 
     ### load job data from html files, time: 3 minutes for 2500 jobs.
-    start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
+    #start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
     start = datetime.datetime.now()
 
     os.chdir('./html/detail')
@@ -387,10 +375,12 @@ if __name__ == '__main__':
                 all_comps[c.comp_id] = c
 
             counter += 1
-            print(counter)
+            if counter % 50 == 0:
+                print(counter)
             uni = unified(j, c)
             all_jc[j.job_id] = uni
 
+    print(counter)
     print(len(all_jobs))
     print(len(all_comps))
     print(len(all_jc))
@@ -405,7 +395,7 @@ if __name__ == '__main__':
 
     # for k in all_jc:
     #     print(all_jc[k]['comp_name'])
-
+    #
     # print('')
     # for k in all_comps:
     #     show_obj(all_comps[k])
