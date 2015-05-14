@@ -27,18 +27,24 @@ print "/ ".join(seg_list3)
 
 ## stop words
 cn_stop_words = chinese()
+cn_stop_words.append(u'一门')
+cn_stop_words.append(u'任一')
+
+jieba.add_word(u'机器学习', 2000)
+jieba.add_word(u'自然语言处理', 2000)
 
 
 def jieba_tokenize(text):
     tokens = jieba.cut(text, cut_all=False)
     return [t for t in tokens if t not in cn_stop_words]
 
-sentence = u'他喜欢编程，不仅是Python，还有Java等等，另外他还喜欢旅行和阅读。这里还有一个英文的逗号,和句号.'
+sentence = u'他喜欢编程，不仅是Python，还有机器学习，自然语言处理等等，另外他还喜欢旅行和阅读。这里还有一个英文的逗号,和句号.'
 print("/ ".join(jieba_tokenize(sentence)))
 print("/ ".join(jieba.cut(sentence, cut_all=False)))
 
 print(',' in cn_stop_words)
 print(u',' in cn_stop_words)
 print(u'.' in cn_stop_words)
+print(u'强' in cn_stop_words)
 
 ## tagging

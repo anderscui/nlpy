@@ -31,6 +31,9 @@ for j in jlist:
 
 ## start to analyze
 cn_stop_words = chinese()
+cn_stop_words.append(u'一门')
+cn_stop_words.append(u'任一')
+
 en_stop_words = stopwords.words('english')
 for esw in en_stop_words:
     if esw not in cn_stop_words:
@@ -38,9 +41,19 @@ for esw in en_stop_words:
 print('stop words: ' + str(len(cn_stop_words)))
 
 
+jieba.add_word(u'机器学习', 2000)
+jieba.add_word(u'自然语言处理', 2000)
+jieba.add_word(u'线框图', 2000)
+
+
+def len_one_filter(term):
+    return (term == u'r') or (len(term) > 1)
+
+
 def jieba_tokenize(text):
+    # TODO: use set instead of list to filter stop words.
     tokens = jieba.cut(text, cut_all=False)
-    return [t.strip() for t in tokens if (len(t) > 1) and (t.strip() not in cn_stop_words) and (not t.isspace())]
+    return [t.strip() for t in tokens if len_one_filter(t) and (t.strip() not in cn_stop_words) and (not t.isspace())]
 
 
 keys = loaded.keys()

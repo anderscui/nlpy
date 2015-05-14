@@ -2,9 +2,10 @@
 import glob
 import os
 import re
+import socket
 
 from bs4 import BeautifulSoup
-from urllib2 import urlopen, URLError
+from urllib2 import urlopen, URLError, Request
 import time
 import datetime
 
@@ -12,6 +13,8 @@ from common.chinese import write, read_all
 from common.io import created_on
 from common.persistence import to_pickle, from_pickle
 from models import Job, Company, unified
+
+debug = False
 
 BASE_URL = 'http://www.lagou.com/'
 
@@ -21,7 +24,13 @@ skill_url = unicode(skill_url)
 
 job_detail_url = 'http://www.lagou.com/jobs/{0}.html?source=search'
 
-debug = False
+# set sockets
+socket_timeout = 20
+sleep_seconds = 5
+
+socket.setdefaulttimeout(socket_timeout)
+
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0'}
 
 
 def log(o):
@@ -34,7 +43,10 @@ def make_search_url(urlfmt, keyword, city, pn):
 
 
 def make_html(url):
-    return urlopen(url).read()
+    req = urlopen(url)
+    res = req.read()
+    req.close()
+    return res
 
 
 def make_soup(html):
@@ -57,9 +69,15 @@ def save_jobs_html(url, skill, pn=1):
 
 
 def download_search_results(skill_url_fmt, kd, city, page):
+
+    html_file = u'./html/{0}_{1}.html'.format(kd, page)
+    if os.path.exists(html_file):
+        print(html_file + u' already exists')
+        return
+
     url = make_search_url(skill_url_fmt, kd, city, page)
     html = save_jobs_html(url, kd, page)
-    time.sleep(1)
+    time.sleep(2)
 
     if not html:
         return None
@@ -75,19 +93,50 @@ def download_search_results(skill_url_fmt, kd, city, page):
             download_search_results(skill_url_fmt, kd, city, curr + 1)
 
 
+def download_all_search_results():
+    page = 1
+    city = u'全国'
+    # skip_list = ['Java', 'Python']
+    skip_list = []
+    cats = from_pickle('cats.pkl')
+    for i in cats:
+        cat = cats[i]
+        print(u'** cat {0}: {1} **'.format(i, cat['name']))
+        for sub in cat['sub_cats']:
+            print(sub[0])
+
+            for skill, href in sub[1]:
+                if skill in skip_list:
+                    print('skip ' + skill)
+                    continue
+
+                print('\t-' + skill + ' - ' + href)
+                if '#' in skill or '/' in skill:
+                    skill = quoted(skill)
+
+                download_search_results(skill_url, skill, city, page)
+
+
 def save_job_detail_html(skill, job_id):
+    html_file = u'./detail/{0}_{1}.html'.format(skill, job_id)
+    if os.path.exists(html_file):
+        print(html_file + u' already exists')
+        return
+
     url = job_detail_url.format(job_id)
     try:
-        html = urlopen(url.encode('utf-8')).read()
+        url_req = Request(url.encode('utf-8'), headers=headers)
+        req = urlopen(url_req)
+        html = req.read()
+        req.close()
+    except UnicodeDecodeError, e:
+        print(str(job_id) + ' unicode error: ' + e.message)
+        return ''
     except URLError, e:
-        if hasattr(e, 'code'):
-            print(u'http error occured for job: {0}, code: {1}'.format(job_id, e.code))
-        elif hasattr(e, 'reason'):
-            print('server not reachable: ' + e.reason)
-
+        print(str(job_id) + ' download error: ' + e.message)
         return ''
     else:
-        write(u'./detail/{0}_{1}.html'.format(skill, job_id), html.decode('utf-8'))
+        write(html_file, html.decode('utf-8'))
         return html
 
 
@@ -118,6 +167,27 @@ def category_contents(cat_tag):
 
     return {'name': header,
             'sub_cats': sub_cats}
+
+
+def save_keywords(html_file):
+    html = read_all(html_file)
+    soup = make_soup(html)
+
+    main_navs = soup.find('div', 'mainNavs')
+    cat_tags = main_navs.find_all('div', 'menu_box')
+    cats = {}
+    for i, cat in enumerate(cat_tags):
+        cats[i] = category_contents(cat)
+
+    for i in cats:
+        cat = cats[i]
+        print(u'** {0} **'.format(cat['name']))
+        for sub in cat['sub_cats']:
+            print(sub[0])
+            for skill, href in sub[1]:
+                print('\t-' + skill + ' - ' + href)
+
+    to_pickle(cats, 'cats.pkl')
 
 
 def get_published_date(dt, created_time):
@@ -208,10 +278,12 @@ def read_job_from_html(skill, html_file):
             features.append(ls)
 
     log(''.join(features))
-    assert len(features) == 6
-    company.domain = features[1]
-    company.size = features[3]
-    company.url = features[5]
+    if len(features) == 6:
+        company.domain = features[1]
+        company.size = features[3]
+        company.url = features[5]
+    else:
+        print(u'features ex: ' + html_file)
 
     log('')
     stage_h = comp_features.h4
@@ -221,11 +293,14 @@ def read_job_from_html(skill, html_file):
         for ls in li.stripped_strings:
             stage.append(ls)
     log('\t'.join(stage))
-    for i in xrange(0, len(stage), 2):
-        if stage[i] == u'目前阶段':
-            company.cur_stage = stage[i + 1]
-        elif stage[i] == u'投资机构':
-            company.investor = stage[i + 1]
+    if len(stage) % 2 == 0:
+        for i in xrange(0, len(stage), 2):
+            if stage[i] == u'目前阶段':
+                company.cur_stage = stage[i + 1]
+            elif stage[i] == u'投资机构':
+                company.investor = stage[i + 1]
+    else:
+        print(u'stages ex: ' + html_file)
 
     log('')
     # address
@@ -243,6 +318,11 @@ def show_obj(obj):
 
 
 def download_job_details(skill):
+    existing = glob.glob1('detail', skill + u'_*.html')
+    if existing:
+        print(u'{0} has been downloaded'.format(skill))
+        return
+
     for f in glob.glob(skill + u'*.html'):
         hp = os.path.join(os.getcwdu(), f)
         print(f)
@@ -252,114 +332,63 @@ def download_job_details(skill):
         for li in soup.find('ul', 'hot_pos reset').find_all('li', recursive=False):
             save_job_detail_html(skill, li['data-jobid'])
             print(li['data-jobid'] + ' downloaded.')
-            time.sleep(1)
+            time.sleep(sleep_seconds)
 
 
-if __name__ == '__main__':
-    # # home page - skills
-    start_url = BASE_URL
-    start_page = 'lagou_home.html'
-    # save_html(start_url, start_page)
+def download_all_job_details():
 
-    # html = read_all('./html/' + start_page)
-    # soup = make_soup(html)
-    #
-    # main_navs = soup.find('div', 'mainNavs')
-    # cat_tags = main_navs.find_all('div', 'menu_box')
-    # cats = {}
-    # for i, cat in enumerate(cat_tags):
-    # cats[i] = category_contents(cat)
-    #
-    # for i in cats:
-    # cat = cats[i]
-    # print(u'** {0} **'.format(cat['name']))
-    # for sub in cat['sub_cats']:
-    #         print(sub[0])
-    #         for skill, href in sub[1]:
-    #             print('\t-' + skill + ' - ' + href)
-    #
-    # to_pickle(cats, 'cats.pkl')
+    print('>>start to download job details of all tags...')
 
-
-    # ## jobs of one skill
-    # # skill_url = 'http://www.lagou.com/zhaopin/ziranyuyanchuli?labelWords=label'
-    # spelling = 'ziranyuyanchuli'
-    # page = 1
-    # city = u'全国'
-    # # kd = u'自然语言处理'
-    # # search_url = make_search_url(skill_url, kd, city, page)
-    #
-    # # download_search_results(skill_url, kd, city, page)
-    #
-    # # process #, /
-    # cs = 'C%23'
-    # # skip_list = ['Java', 'Python', 'PHP', '.NET']
-    # skip_list = []
-    # cats = from_pickle('cats.pkl')
-    # for i in cats:
-    #     cat = cats[i]
-    #     print(u'** cat {0}: {1} **'.format(i, cat['name']))
-    #     for sub in cat['sub_cats']:
-    #         print(sub[0])
-    #
-    #         for skill, href in sub[1]:
-    #             if skill in skip_list:
-    #                 print('skip ' + skill)
-    #                 continue
-    #
-    #             print('\t-' + skill + ' - ' + href)
-    #             if skill == 'C#':
-    #                 skill = cs
-    #
-    #             # print(make_search_url(skill_url, skill, city, page))
-    #             download_search_results(skill_url, skill, city, page)
-
-    # print(search_url)
-    # save_jobs_html(search_url, spelling, page)
-    # jid = 128328
-    # print(save_job_detail_html(jid))
-
-    # start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET']
-    # start_skills = [u'自然语言处理']
-    # cats = from_pickle('cats.pkl')
-    # for i in cats:
-    #     cat = cats[i]
-    #     print(u'** cat {0}: {1} **'.format(i, cat['name']))
-    #     for sub in cat['sub_cats']:
-    #         # print(sub[0])
-    #
-    #         for skill, href in sub[1]:
-    #             if skill in start_skills:
-    #                 print('downloading... ' + skill)
-    #                 continue
-
-    ### download jobs of specific skills
-    start_skills = [u'Python', u'自然语言处理', u'数据挖掘', u'搜索算法', u'精准推荐', u'用户研究员', u'交互设计师', u'.NET',
-                    u'Java', u'C', u'PHP', u'Ruby', u'Node.js', u'iOS', u'Android', u'Javascript',
-                    u'MongoDB', u'产品经理', u'APP设计师', u'UI设计师', u'数据分析师']
+    cats = from_pickle('cats.pkl')
 
     os.chdir('./html')
     print(os.getcwdu())
 
-    for sc in start_skills:
-        download_job_details(sc)
+    for i in cats:
+        cat = cats[i]
+        print(u'** cat {0}: {1} **'.format(i, cat['name']))
+        for sub in cat['sub_cats']:
+            for skill, href in sub[1]:
+                print('downloading... ' + skill)
+                if '#' in skill or '/' in skill:
+                    skill = quoted(skill)
 
-    os.chdir('..')
+                download_job_details(skill)
+
+    os.chdir('../../lagou')
     print(os.getcwdu())
 
-    ### load job data from html files, time: 10 minutes for 9900 jobs.
+    print('<<end to download job details of all tags...')
+
+
+def quoted(s):
+    return s.replace('#', '%23').replace('/', '%2B')
+
+
+def load_job_data():
+
     start = datetime.datetime.now()
+
+    cats = from_pickle('cats.pkl')
 
     os.chdir('./html/detail')
     print(os.getcwd())
 
     detail_html_paths = []
-    for skill in start_skills:
-        for f in glob.glob(skill + u'_*.html'):
-            hp = os.path.join(os.getcwdu(), f)
-            # print(hp)
-            detail_html_paths.append((skill, hp))
-            # break
+    for i in cats:
+        cat = cats[i]
+        print(u'** cat {0}: {1} **'.format(i, cat['name']))
+        for sub in cat['sub_cats']:
+            for skill, href in sub[1]:
+                print('loading... ' + skill)
+                if '#' in skill or '/' in skill:
+                    skill = quoted(skill)
+
+                for f in glob.glob(skill + u'_*.html'):
+                    hp = os.path.join(os.getcwdu(), f)
+                    # print(hp)
+                    detail_html_paths.append((skill, hp))
+
     os.chdir('../..')
     print(os.getcwd())
 
@@ -393,6 +422,33 @@ if __name__ == '__main__':
 
     print(start)
     print(datetime.datetime.now())
+
+
+if __name__ == '__main__':
+
+    os.chdir('../crawlers')
+
+    # # home page - skills
+    start_url = BASE_URL
+    start_page = 'lagou_home.html'
+    # save_html(start_url, start_page)
+
+    ################################
+
+    # save_keywords('./html/' + start_page)
+
+    ################################
+
+    # download_all_search_results()
+
+    ################################
+
+    # download_all_job_details()
+
+    ################################
+
+    ### load job data from html files, time: 10 minutes for 9900 jobs.
+    load_job_data()
     ### load job data from html files end.
 
     # for k in all_jc:
@@ -402,3 +458,24 @@ if __name__ == '__main__':
     # for k in all_comps:
     #     show_obj(all_comps[k])
 
+    # socket.error: [Errno 10054] An existing connection was forcibly closed by the remote host
+    # u'黑盒测试'
+    # u'运维工程师'
+    # u'病毒分析'
+    # u'技术总监'
+    # u'运维总监'
+    # u'项目总监'
+    # u'安全专家'
+    # u'项目经理'
+    # u'项目助理'
+    # u'硬件'
+    # u'驱动开发'
+    # u'模具设计'
+    # u'材料工程师'
+    # u'电商产品经理'
+    # u'产品实习生'
+    # u'Flash设计师'
+    # u'多媒体设计师'
+    # u'视觉设计师'
+    # u'游戏场景'
+    # u'游戏数值策划'
