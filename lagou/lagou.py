@@ -443,12 +443,12 @@ if __name__ == '__main__':
 
     ################################
 
-    # download_all_job_details()
+    download_all_job_details()
 
     ################################
 
     ### load job data from html files, time: 10 minutes for 9900 jobs.
-    load_job_data()
+    # load_job_data()
     ### load job data from html files end.
 
     # for k in all_jc:
@@ -458,7 +458,6 @@ if __name__ == '__main__':
     # for k in all_comps:
     #     show_obj(all_comps[k])
 
-    # socket.error: [Errno 10054] An existing connection was forcibly closed by the remote host
     # u'黑盒测试'
     # u'运维工程师'
     # u'病毒分析'
