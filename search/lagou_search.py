@@ -35,7 +35,7 @@ parser = QueryParser("desc", schema=ix.schema)
 #     break
 
 
-k = u'竞品 (city:上海 OR city:北京)'
+k = u'自然语言 (city:上海 OR city:北京)'
 q = parser.parse(k)
 results = searcher.search(q)
 print(u'{0} results found for keyword {1}: '.format(len(results), k))

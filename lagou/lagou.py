@@ -1,5 +1,7 @@
 # coding=utf-8
+from _socket import timeout
 import glob
+import httplib
 import os
 import re
 import socket
@@ -8,6 +10,7 @@ from bs4 import BeautifulSoup
 from urllib2 import urlopen, URLError, Request
 import time
 import datetime
+import sys
 
 from common.chinese import write, read_all
 from common.io import created_on
@@ -118,6 +121,12 @@ def download_all_search_results():
 
 
 def save_job_detail_html(skill, job_id):
+    global sleep_seconds
+
+    if sleep_seconds >= 30:
+        print(u'it already took you a long time to wait, take a rest now:) ')
+        sys.exit(10)
+
     html_file = u'./detail/{0}_{1}.html'.format(skill, job_id)
     if os.path.exists(html_file):
         print(html_file + u' already exists')
@@ -135,6 +144,12 @@ def save_job_detail_html(skill, job_id):
     except URLError, e:
         print(str(job_id) + ' download error: ' + e.message)
         return ''
+    except timeout:
+        sleep_seconds += 5
+        print(u'timeout ({0}-{1}) error occurred, take a rest now. zzZZZ...'.format(skill, job_id))
+        time.sleep(60)
+    except httplib.BadStatusLine, e:
+        print(str(job_id) + ' bad status error: ' + e.message)
     else:
         write(html_file, html.decode('utf-8'))
         return html
@@ -443,12 +458,12 @@ if __name__ == '__main__':
 
     ################################
 
-    # download_all_job_details()
+    download_all_job_details()
 
     ################################
 
     ### load job data from html files, time: 10 minutes for 9900 jobs.
-    load_job_data()
+    # load_job_data()
     ### load job data from html files end.
 
     # u'黑盒测试'
