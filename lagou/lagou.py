@@ -148,8 +148,8 @@ def save_job_detail_html(skill, job_id):
         sleep_seconds += 5
         print(u'timeout ({0}-{1}) error occurred, take a rest now. zzZZZ...'.format(skill, job_id))
         time.sleep(60)
-    except httplib.BadStatusLine, e:
-        print(str(job_id) + ' bad status error: ' + e.message)
+    # except httplib.BadStatusLine, e:
+    #     print(str(job_id) + ' bad status error: ' + e.message)
     else:
         write(html_file, html.decode('utf-8'))
         return html
