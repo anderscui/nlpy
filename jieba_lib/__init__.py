@@ -1,4 +1,6 @@
 # coding=utf-8
+from __future__ import absolute_import, unicode_literals
+
 __version__ = '0.37'
 __license__ = 'MIT'
 
@@ -14,9 +16,8 @@ import tempfile
 from math import log
 from hashlib import md5
 
-import _compat
-# from _compat import *
-# import finalseg
+from _compat import *
+import finalseg
 
 # set _replace_file function.
 if os.name == 'nt':
@@ -29,7 +30,7 @@ _get_module_path = lambda path: os.path.normpath(os.path.join(os.getcwd(),
 _get_abs_path = lambda path: os.path.normpath(os.path.join(os.getcwd(), path))
 
 # default dict file under current dir.
-DEFAULT_DICT = _get_module_path("test_dict.txt")
+DEFAULT_DICT = _get_module_path("dict.txt")
 
 log_console = logging.StreamHandler(sys.stderr)
 default_logger = logging.getLogger(__name__)
@@ -216,12 +217,16 @@ if __name__ == '__main__':
     print len(tokenizer.FREQ)
     print tokenizer.total
 
-    sentence = u'语言学家参加了他一直期望的学术会议'
+    sentence = u'我很喜欢刺客聂隐娘这部电影'
+    #sentence = u'语言学家 参加 学术会议'
+    # sentence = u'说曹操曹操到'
     # DAG:
     dag = tokenizer.get_DAG(sentence)
-    print(dag)
+    # print(dag)
 
     route = {}
-    tokenizer.calc(sentence, dag, route)
-    print(route)
+    # tokenizer.calc(sentence, dag, route)
+    # print(route)
 
+    sentence = u'我先是学习了C，后面又学了Python 2.7, Java 8等等'
+    finalseg.cut(sentence)

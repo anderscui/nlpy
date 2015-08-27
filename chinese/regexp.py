@@ -15,3 +15,8 @@ movie_url = 'http://movie.douban.com/subject/123/comments?start=0&limit=20&sort=
 pat = 'ex'
 m = re.search('start=(\d+)', movie_url)
 print(m.group(1))
+
+
+print re.split('\W+', 'Words, words, words.')
+print re.split('\w+', 'Words, words, words.')
+
