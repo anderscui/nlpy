@@ -30,7 +30,7 @@ _get_module_path = lambda path: os.path.normpath(os.path.join(os.getcwd(),
 _get_abs_path = lambda path: os.path.normpath(os.path.join(os.getcwd(), path))
 
 # default dict file under current dir.
-DEFAULT_DICT = _get_module_path("dict.txt")
+DEFAULT_DICT = _get_module_path("test_dict.txt")
 
 log_console = logging.StreamHandler(sys.stderr)
 default_logger = logging.getLogger(__name__)
@@ -87,6 +87,7 @@ class Tokenizer(object):
                         if wfrag not in lfreq:
                             lfreq[wfrag] = 0
                 except ValueError:
+                    print line
                     raise ValueError(
                         'invalid dictionary entry in %s at Line %s: %s' % (f_name, lineno, line))
         return lfreq, ltotal
@@ -217,16 +218,19 @@ if __name__ == '__main__':
     print len(tokenizer.FREQ)
     print tokenizer.total
 
-    sentence = u'我很喜欢刺客聂隐娘这部电影'
-    #sentence = u'语言学家 参加 学术会议'
+    # sentence = u'我很喜欢刺客聂隐娘这部电影'
+    sentence = u'语言学家参加学术会议'
     # sentence = u'说曹操曹操到'
     # DAG:
     dag = tokenizer.get_DAG(sentence)
-    # print(dag)
+    print(dag)
 
     route = {}
-    # tokenizer.calc(sentence, dag, route)
-    # print(route)
+    tokenizer.calc(sentence, dag, route)
+    print(route)
 
-    sentence = u'我先是学习了C，后面又学了Python 2.7, Java 8等等'
-    finalseg.cut(sentence)
+    # sentence = u'我先是学习了C，后面又学了Python 2.7, Java 8等等'
+    # finalseg.cut(sentence)
+    sentence = u'IBM是一家不错的公司，给你发offer了吗？'
+    for s in re_han_default.split(sentence):
+        print s
