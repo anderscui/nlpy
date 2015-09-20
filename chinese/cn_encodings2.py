@@ -2,7 +2,7 @@
 import codecs
 
 fname = 'output.txt'
-content = '\u4e00\u4e01\u4e03'
+content = '\u4e00\u4e01\u4e0a'
 cn = content.decode('unicode-escape')
 print(cn)
 print(len(cn))

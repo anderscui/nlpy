@@ -1,3 +1,4 @@
+snownlp
 scrapy
 whoosh
 nltk

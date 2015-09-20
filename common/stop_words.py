@@ -8,7 +8,7 @@ def english():
 
 
 def chinese():
-    return [line.strip() for line in read_lines('../dicts/data/stopwords_zh.txt')]
+    return set([line.strip() for line in read_lines('../dicts/data/stopwords_zh.txt')])
 
 
 if __name__ == '__main__':
