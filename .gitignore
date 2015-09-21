@@ -4,3 +4,4 @@ crawlers/html/*.html
 crawlers/html/detail/*.html
 lagou_v2/positions.pkl
 lagou_v2/pos_norm.pkl
+lagou/lagou.db
