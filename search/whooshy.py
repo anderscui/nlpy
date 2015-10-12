@@ -14,4 +14,5 @@ from whoosh.qparser import QueryParser
 with ix.searcher() as searcher:
     query = QueryParser('content', ix.schema).parse('first')
     results = searcher.search(query)
-    print(results[0])
+    for hit in results:
+        print(hit)
