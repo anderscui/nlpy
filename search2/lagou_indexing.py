@@ -1,5 +1,6 @@
 # coding=utf-8
 import datetime
+import jieba
 from common.html_util import strip_tags
 from common.persistence import from_pickle, to_pickle
 
@@ -11,10 +12,7 @@ with con:
 
     con.row_factory = sqlite.Row
     cur = con.cursor()
-    cur.execute("select * from position where name like '%Python%' "
-                "or name like '%机器学习%' or name like '%数据挖掘%' or name like '%自然语言处理%' "
-                "or name like '%C#%' or name like '%搜索算法%' or name like '%Hadoop%' "
-                "or name like '%交互设计师%' or name like '%数据分析师%' or name like '%Java%'")
+    cur.execute("select * from position")
     rows = cur.fetchall()
 
     # print(type(rows))
@@ -40,12 +38,15 @@ from jieba.analyse import ChineseAnalyzer
 
 analyzer = ChineseAnalyzer()
 
+jieba.add_word(u'机器学习')
+jieba.add_word(u'自然语言处理')
+
 schema = Schema(id=ID(stored=True),
-                name=TEXT(stored=True),
+                name=TEXT(stored=True, analyzer=analyzer),
                 desc=TEXT(stored=True, analyzer=analyzer),
                 city=TEXT(stored=True),
                 salary=TEXT(stored=True),
-                time_type=TEXT(stored=True),
+                # time_type=TEXT(stored=True),
                 fin_stage=TEXT(stored=True),
                 industry=TEXT(stored=True),
                 education=TEXT(stored=True),
@@ -81,7 +82,7 @@ for pos in rows[:n]:
         desc=unicode(strip_tags(pos['desc'])),
         city=pos['city'],
         salary=pos['salary'],
-        time_type=pos['time_type'],
+        # time_type=pos['time_type'],
         fin_stage=pos['fin_stage'],
         industry=pos['industry'],
         education=pos['education'],

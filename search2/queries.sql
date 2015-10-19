@@ -1,0 +1,1 @@
+select * from position where city = '上海' and name like '%机器学习%'
