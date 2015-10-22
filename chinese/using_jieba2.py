@@ -17,3 +17,4 @@ jieba.del_word('湖南长沙市')
 cuttest('湖南长沙市天心区')
 
 #
+cuttest(u'自然语言处理')
