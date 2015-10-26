@@ -1,4 +1,5 @@
 # coding=utf-8
+import datetime
 from whoosh.index import open_dir
 from whoosh.qparser import MultifieldParser
 
@@ -9,8 +10,14 @@ searcher = ix.searcher()
 parser = MultifieldParser(["name", "com_name"], schema=ix.schema)
 
 # Single field parser.
-k = u'自然语言处理 salary_from:[10000 TO] salary_to:[TO 30000] date:[20150831 TO 20151010] city:上海'
+k = u'自然 语言 自然语言 处理 salary_from:[1 TO 5000] salary_to:[ TO 5000] city:上海'
 q = parser.parse(k)
+
+today = datetime.datetime.now()
+date_to = today
+date_from = today + datetime.timedelta(days=-7)
+print date_to.strftime('%Y%m%d')
+print date_from.strftime('%Y%m%d')
 
 results = searcher.search_page(q, 1, pagelen=30)
 
@@ -21,3 +28,4 @@ for hit in results[:50]:
     print(hit['salary_from'], hit['salary_to'])
     print(hit['date'])
     print('************')
+

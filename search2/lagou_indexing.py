@@ -11,11 +11,11 @@ con = sqlite.connect('lagou.db')
 with con:
     con.row_factory = sqlite.Row
     cur = con.cursor()
-    # cur.execute("select * from position")
-    cur.execute("select * from position where name like '%Python%' "
-                "or name like '%机器学习%' or name like '%数据挖掘%' or name like '%自然语言处理%' "
-                "or name like '%C#%' or name like '%搜索算法%' or name like '%Hadoop%' "
-                "or name like '%交互设计师%' or name like '%数据分析师%' or name like '%Java%'")
+    cur.execute("select * from position")
+    # cur.execute("select * from position where name like '%Python%' "
+    #             "or name like '%机器学习%' or name like '%数据挖掘%' or name like '%自然语言处理%' "
+    #             "or name like '%C#%' or name like '%搜索算法%' or name like '%Hadoop%' "
+    #             "or name like '%交互设计师%' or name like '%数据分析师%' or name like '%Java%'")
 rows = cur.fetchall()
 
 # print(type(rows))
@@ -39,11 +39,12 @@ from whoosh.fields import *
 
 from jieba.analyse import ChineseAnalyzer
 
-analyzer = ChineseAnalyzer()
+stopwords = list(from_pickle('stopwords.pkl'))
+analyzer = ChineseAnalyzer(stopwords)
 
 schema = Schema(id=ID(stored=True),
                 name=TEXT(stored=True, analyzer=analyzer),
-                desc=TEXT(stored=True, analyzer=analyzer),
+                desc=TEXT(analyzer=analyzer),
                 city=TEXT(stored=True),
                 salary=TEXT(stored=True),
                 salary_from=NUMERIC(int, 32, signed=False, stored=True),
