@@ -16,3 +16,9 @@ jieba.add_word(u'自然语言处理')
 cuttest(u'机器学习')
 cuttest(u'自然语言')
 cuttest(u'自然语言处理')
+
+
+tokens = jieba.tokenize(u'语言学家参加学术会议', mode="search")
+tokens = [t[0] for t in tokens]
+for t in tokens:
+    print t

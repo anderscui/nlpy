@@ -26,7 +26,8 @@ cnt_word_doc = Counter()
 cnt_words = Counter()
 for pos in rows[:n]:
     desc = strip_tags(pos['desc'])
-    words = jieba.cut(desc, cut_all=False)
+    tokens = jieba.tokenize(desc, mode="search")
+    words = [t[0] for t in tokens]
     cur = Counter(words)
     for k in cur:
         cnt_word_doc[k] += 1

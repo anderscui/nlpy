@@ -10,9 +10,9 @@ cnt_word_doc = from_pickle('cnt_word_doc.pkl')
 # print
 # print
 # print '++in docs++'
-for k in cnt_word_doc.most_common(500):
-    print u'{0}: {1}'.format(k[0], k[1])
-    # print k[0]
+for k in cnt_word_doc.most_common(1000):
+    # print u'{0}: {1}'.format(k[0], k[1])
+    print k[0]
 
 # print(len(cnt_words))
 #

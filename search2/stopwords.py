@@ -7,8 +7,9 @@ def chinese():
     hit = set([line.strip() for line in read_lines('stopwords_zh.txt')])
     lagou = set([line.strip() for line in read_lines('stopwords_lagou.txt')])
     en = set([line.strip() for line in read_lines('stopwords_en.txt')])
+    ws = {u'', u' ', u'\t', u'\n'}
 
-    return en | hit | lagou
+    return en | hit | lagou | ws
 
 
 if __name__ == '__main__':

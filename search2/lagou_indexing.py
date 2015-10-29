@@ -44,7 +44,7 @@ analyzer = ChineseAnalyzer(stopwords)
 
 schema = Schema(id=ID(stored=True),
                 name=TEXT(stored=True, analyzer=analyzer),
-                desc=TEXT(analyzer=analyzer),
+                # desc=TEXT(stored=True, analyzer=analyzer),
                 city=TEXT(stored=True),
                 salary=TEXT(stored=True),
                 salary_from=NUMERIC(int, 32, signed=False, stored=True),
@@ -58,7 +58,7 @@ schema = Schema(id=ID(stored=True),
                 address=TEXT(stored=True),
                 date=DATETIME(stored=True, sortable=True))
 
-idx_dir = 'lagou_idx'
+idx_dir = 'lagou_idx_quick'
 if not os.path.exists(idx_dir):
     os.mkdir(idx_dir)
 
@@ -101,7 +101,7 @@ for pos in rows[:n]:
     writer.add_document(
         id=unicode(pos['pos_id']),
         name=pos['name'],
-        desc=unicode(strip_tags(pos['desc'])),
+        # desc=unicode(strip_tags(pos['desc'])),
         city=pos['city'],
         salary=pos['salary'],
         salary_from=salary_range[0],
