@@ -22,3 +22,4 @@ print q
 q = u' OR '.join(q)
 print(q)
 # cuttest('自然语言处理')
+cuttest('妈妈住院了，过一段时间在说吧')
