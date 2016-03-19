@@ -11,6 +11,13 @@ BeautifulSoup
 lxml
 #pip install lxml
 
-nose test
+nose
 #pip install nose
 
+pyenchant
+lockfile
+execnet
+pymongo
+redis
+python-dateutil
+charade
