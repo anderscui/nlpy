@@ -1,4 +1,3 @@
-
 from nltk.corpus import webtext
 
 for fileid in webtext.fileids():
