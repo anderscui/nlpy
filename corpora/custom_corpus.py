@@ -18,3 +18,7 @@ def check_data_dir():
 
 data_dir = check_data_dir()
 print(data_dir in nltk.data.path)
+
+# test a file
+import nltk.data
+print(nltk.data.load('corpora/cookbook/mywords.txt', format='raw'))
