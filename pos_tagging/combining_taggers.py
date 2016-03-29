@@ -1,14 +1,13 @@
 from nltk.tag import UnigramTagger, DefaultTagger
 from nltk.corpus import treebank
 
+from tag_util import train_sents, test_sents
+
 # train
 default_tagger = DefaultTagger('NN')
-
-train_sents = treebank.tagged_sents()[:3000]
 tagger = UnigramTagger(train_sents, backoff=default_tagger)
 
 # test
-test_sents = treebank.tagged_sents()[3000:]
 print(tagger.evaluate(test_sents))
 
 # save to pickle

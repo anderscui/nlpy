@@ -1,5 +1,6 @@
 from nltk.tag import DefaultTagger, UnigramTagger, BigramTagger, TrigramTagger
 from nltk.corpus import treebank
+from tag_util import backoff_tagger
 
 train_sents = treebank.tagged_sents()[:3000]
 test_sents = treebank.tagged_sents()[3000:]
@@ -9,13 +10,6 @@ print(bitagger.evaluate(test_sents))
 
 tritagger = TrigramTagger(train_sents)
 print(tritagger.evaluate(test_sents))
-
-
-def backoff_tagger(train_sents, tagger_classes, backoff=None):
-    combined = backoff
-    for cls in tagger_classes:
-        combined = cls(train_sents, backoff=combined)
-    return combined
 
 default_tagger = DefaultTagger('NN')
 combined_tagger = backoff_tagger(train_sents, [UnigramTagger, BigramTagger, TrigramTagger], backoff=default_tagger)
